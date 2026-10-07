@@ -1,0 +1,10 @@
+.venv/
+.runtime/
+__pycache__/
+*.pyc
+scala/target/
+scala/project/target/
+scala/project/project/
+metastore_db/
+spark-warehouse/
+derby.log

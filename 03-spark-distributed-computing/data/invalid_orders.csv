@@ -1,0 +1,4 @@
+order_id,customer_id,amount,event_time
+bad1,c1,not-money,2025-01-01 10:00:00
+bad2,c2,-1.00,not-a-timestamp
+bad3,c3,1.999,2025-01-01 10:00:00

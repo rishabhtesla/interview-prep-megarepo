@@ -1,0 +1,31 @@
+# Java, Scala, and build output
+**/out/
+**/target/
+**/.bsp/
+**/.scala-build/
+**/.metals/
+*.class
+*.mv.db
+*.trace.db
+
+# Python and Spark local artifacts
+**/.venv/
+**/__pycache__/
+*.pyc
+**/spark-warehouse/
+**/metastore_db/
+**/derby.log
+
+# Frontend output
+**/node_modules/
+**/dist/
+**/coverage/
+
+# Local configuration and tools
+.DS_Store
+.idea/
+.vscode/
+.env
+.env.*
+!.env.example
+*.log

@@ -1,0 +1,3 @@
+Spark makes data processing parallel
+parallel jobs scale
+SPARK, spark!
