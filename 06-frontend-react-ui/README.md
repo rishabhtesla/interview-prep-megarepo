@@ -74,6 +74,12 @@ The current app is a study dashboard. Its useful interview examples include:
 | `src/useStudy.js` | Custom hook, parallel fetches, aborting stale requests |
 | `src/App.test.jsx` | Testing user behavior, failures, and async UI |
 
+The dashboard also includes an **Interactive Algorithm Lab** near the top of
+the page. Choose a target and step through binary search: the active range,
+middle element, invariant, and O(log n) reasoning are shown visually. This is
+the recommended first visualization before reading the standalone DSA
+implementations in [track 05](../05-dsa-leetcode/README.md).
+
 To try the small examples below, temporarily replace `src/App.jsx` with one
 example and run `npm run dev`. Restore the file afterwards, or use a separate
 Vite project:

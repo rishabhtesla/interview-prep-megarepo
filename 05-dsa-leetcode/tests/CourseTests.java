@@ -12,13 +12,14 @@ public final class CourseTests {
 
     public static void main(String[] args) throws Exception {
         arraysAndWindows();
+        expansionArraysAndStrings();
         stacksAndSearch();
         listsAndTrees();
         graphs();
         heapsAndBacktracking();
         dynamicProgramming();
         oracleChecks();
-        eq(50, covered.size());
+        eq(73, covered.size());
         if (args.length != 1) throw new IllegalArgumentException("pass solution-source manifest");
         Set<String> sourceNames = new TreeSet<>();
         for (String path : Files.readAllLines(Path.of(args[0]))) {
@@ -157,6 +158,32 @@ public final class CourseTests {
             eq("ab", s.solve("abxxba", "ab"));
             eq("\u03bb\u00e9", s.solve("x\u03bb\u00e9", "\u00e9\u03bb"));
         });
+    }
+
+    private static void expansionArraysAndStrings() {
+        test("MergeSortedArray", () -> { int[] a = {1, 2, 3, 0, 0, 0}; eq(a, new MergeSortedArray().solve(a, 3, new int[]{2, 5, 6}, 3)); arr(a, 1, 2, 2, 3, 5, 6); });
+        test("RemoveElement", () -> { int[] a = {3, 2, 2, 3}; eq(2, new RemoveElement().solve(a, 3)); arrPrefix(a, 2, 2); });
+        test("RemoveDuplicates", () -> { int[] a = {0, 0, 1, 1, 2}; eq(3, new RemoveDuplicates().solve(a)); arrPrefix(a, 0, 1, 2); });
+        test("RemoveDuplicatesII", () -> { int[] a = {1, 1, 1, 2, 2, 3}; eq(5, new RemoveDuplicatesII().solve(a)); arrPrefix(a, 1, 1, 2, 2, 3); });
+        test("MajorityElement", () -> { eq(2, new MajorityElement().solve(new int[]{2, 2, 1, 1, 1, 2, 2})); eq(9, new MajorityElement().solve(new int[]{9})); });
+        test("RotateArray", () -> { int[] a = {1, 2, 3, 4, 5, 6, 7}; new RotateArray().solve(a, 3); arr(a, 5, 6, 7, 1, 2, 3, 4); eq(List.of(), Arrays.stream(new RotateArray().solve(new int[0], 4)).boxed().toList()); });
+        test("BestTimeToBuyAndSellStock", () -> { eq(5, new BestTimeToBuyAndSellStock().solve(new int[]{7, 1, 5, 3, 6, 4})); eq(0, new BestTimeToBuyAndSellStock().solve(new int[]{7, 6, 4})); });
+        test("BestTimeToBuyAndSellStockII", () -> { eq(7, new BestTimeToBuyAndSellStockII().solve(new int[]{7, 1, 5, 3, 6, 4})); eq(0, new BestTimeToBuyAndSellStockII().solve(new int[]{7, 6, 4})); });
+        test("JumpGame", () -> { eq(true, new JumpGame().solve(new int[]{2, 3, 1, 1, 4})); eq(false, new JumpGame().solve(new int[]{3, 2, 1, 0, 4})); });
+        test("JumpGameII", () -> { eq(2, new JumpGameII().solve(new int[]{2, 3, 1, 1, 4})); eq(-1, new JumpGameII().solve(new int[]{3, 2, 1, 0, 4})); });
+        test("HIndex", () -> { eq(3, new HIndex().solve(new int[]{3, 0, 6, 1, 5})); eq(1, new HIndex().solve(new int[]{1})); });
+        test("RandomizedSet", () -> { RandomizedSet s = new RandomizedSet(new Random(1)); eq(true, s.insert(1)); eq(false, s.insert(1)); eq(true, s.insert(2)); eq(true, s.remove(1)); eq(false, s.remove(1)); eq(2, s.getRandom()); });
+        test("GasStation", () -> { eq(3, new GasStation().solve(new int[]{1, 2, 3, 4, 5}, new int[]{3, 4, 5, 1, 2})); eq(-1, new GasStation().solve(new int[]{2, 3, 4}, new int[]{3, 4, 3})); });
+        test("Candy", () -> { eq(5, new Candy().solve(new int[]{1, 0, 2})); eq(4, new Candy().solve(new int[]{1, 2, 2})); });
+        test("TrappingRainWater", () -> { eq(6, new TrappingRainWater().solve(new int[]{0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1})); eq(0, new TrappingRainWater().solve(new int[]{1, 2, 3})); });
+        test("RomanToInteger", () -> { eq(1994, new RomanToInteger().solve("MCMXCIV")); eq("LVIII", new IntegerToRoman().solve(58)); });
+        test("IntegerToRoman", () -> { eq(4, new RomanToInteger().solve(new IntegerToRoman().solve(4))); eq("M", new IntegerToRoman().solve(1000)); });
+        test("LengthOfLastWord", () -> { eq(5, new LengthOfLastWord().solve("Hello World")); eq(0, new LengthOfLastWord().solve("   ")); });
+        test("LongestCommonPrefix", () -> { eq("fl", new LongestCommonPrefix().solve(new String[]{"flower", "flow", "flight"})); eq("", new LongestCommonPrefix().solve(new String[]{"dog", "racecar"})); });
+        test("ReverseWords", () -> { eq("blue is sky the", new ReverseWords().solve("  the sky is blue  ")); eq("", new ReverseWords().solve("   ")); });
+        test("ZigzagConversion", () -> { eq("PAHNAPLSIIGYIR", new ZigzagConversion().solve("PAYPALISHIRING", 3)); eq("ABC", new ZigzagConversion().solve("ABC", 1)); });
+        test("FindIndexFirstOccurrence", () -> { eq(2, new FindIndexFirstOccurrence().solve("hello", "ll")); eq(-1, new FindIndexFirstOccurrence().solve("aaaaa", "bba")); });
+        test("TextJustification", () -> { eq(List.of("This    is    an", "example  of text", "justification.  "), new TextJustification().solve(new String[]{"This", "is", "an", "example", "of", "text", "justification."}, 16)); eq(List.of("a"), new TextJustification().solve(new String[]{"a"}, 1)); });
     }
 
     private static void stacksAndSearch() {
@@ -778,6 +805,12 @@ public final class CourseTests {
 
     private static void arr(int[] actual, int... expected) {
         check(Arrays.equals(expected, actual), "expected " + Arrays.toString(expected) + ", got " + Arrays.toString(actual));
+    }
+
+    private static void arrPrefix(int[] actual, int... expected) {
+        check(actual.length >= expected.length, "result shorter than expected prefix");
+        check(Arrays.equals(expected, Arrays.copyOf(actual, expected.length)),
+                "expected prefix " + Arrays.toString(expected) + ", got " + Arrays.toString(actual));
     }
 
     private static void longs(long[] actual, long... expected) {

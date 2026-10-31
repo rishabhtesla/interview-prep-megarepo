@@ -9,8 +9,8 @@ trap 'rm -rf -- "$build"' EXIT
 find . -type f -name '*.java' ! -path "./$build/*" ! -path './out/*' \
     ! -path './support/*' ! -path './tests/*' | LC_ALL=C sort > "$build/solutions.txt"
 count=$(wc -l < "$build/solutions.txt" | tr -d '[:space:]')
-if [[ "$count" != 50 ]]; then
-    printf 'Expected exactly 50 solution files, found %s\n' "$count" >&2
+if [[ "$count" != 73 ]]; then
+    printf 'Expected exactly 73 solution files, found %s\n' "$count" >&2
     exit 1
 fi
 find . -type f -name '*.java' ! -path "./$build/*" ! -path './out/*' \

@@ -3,6 +3,7 @@ import { render, screen, waitFor, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 import App from "./App.jsx";
+import AlgorithmLab from "./AlgorithmLab.jsx";
 
 const topics = [
   { id: "react-effects", track: "react", title: "Render and effects", summary: "Clean up a request", minutes: 60 },
@@ -23,6 +24,18 @@ function api({ progress = [], writeError = false } = {}) {
 }
 
 describe("study planner", () => {
+  it("steps through the binary-search visualization", async () => {
+    const user = userEvent.setup();
+    render(<AlgorithmLab />);
+    expect(screen.getByText(/Step 1 of/)).toBeInTheDocument();
+    await user.clear(screen.getByLabelText("Binary search target"));
+    await user.type(screen.getByLabelText("Binary search target"), "3");
+    await user.click(screen.getByRole("button", { name: "Next step" }));
+    expect(screen.getByText(/Step 2 of/)).toBeInTheDocument();
+    await user.click(screen.getByRole("button", { name: "Next step" }));
+    expect(screen.getByText(/Found 3 at index 0/)).toBeInTheDocument();
+  });
+
   it("shows loading, restores saved state, filters and preserves hidden drafts", async () => {
     api({ progress: [{ topicId: "spring-transactions", completed: true, note: "Done" }] });
     const user = userEvent.setup();

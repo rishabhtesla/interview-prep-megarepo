@@ -10,10 +10,19 @@ way to expose gaps and practice. Completing a page is not the same as mastering 
 ## Start here
 
 1. Take the diagnostic in [STUDY_PLAN.md](STUDY_PLAN.md) without looking up answers.
-2. Pick a role emphasis and follow the 12-week progression; shorten it only after passing the exit criteria.
+2. Follow the progressive [full-stack learning path](LEARNING_PATH.md) from basics to advanced; shorten it only after passing the exit criteria.
 3. Read a topic, predict the example's behavior, run it, change an assumption, and explain the result aloud.
 4. Solve DSA problems before opening their solutions. Re-solve missed problems after 1, 3, 7, and 21 days.
 5. Use [INTERVIEW_PLAYBOOK.md](INTERVIEW_PLAYBOOK.md) for timed practice and scoring.
+
+## A runnable path from basics to full stack
+
+Use [LEARNING_PATH.md](LEARNING_PATH.md) as the route through the repository.
+It connects Java fundamentals, DSA, SQL/Spark, Spring services, React, and
+system design into one progression. The React dashboard is the interactive
+front door: it saves study progress, exposes loading/error/retry behavior, and
+includes a step-by-step binary-search visualizer. The backend failure lab then
+lets you observe what happens when a dependency is stopped.
 
 ## Six learning tracks
 
@@ -24,7 +33,7 @@ way to expose gaps and practice. Completing a page is not the same as mastering 
 | [03-spark-distributed-computing](03-spark-distributed-computing/README.md) | Scala/PySpark batch jobs, joins, windows, partitioning, query plans, data quality | Explain where data moves, why a stage is slow, and how to make reruns safe |
 | [04-backend-spring-microservices](04-backend-spring-microservices/README.md) | REST services, persistence, validation, interservice calls, failure semantics | Trace a request across service boundaries and distinguish local transactions from distributed guarantees |
 | [05-dsa-leetcode](05-dsa-leetcode/README.md) | 50 categorized Java solutions with correctness reasoning and complexity | Derive a pattern from constraints, state its invariant, and handle boundary cases under time pressure |
-| [06-frontend-react-ui](06-frontend-react-ui/README.md) | React application connected to the backend, hooks, state, asynchronous UI, testing | Explain rerenders, ownership of state, race conditions, accessibility, and failure states |
+| [06-frontend-react-ui](06-frontend-react-ui/README.md) | React application connected to the backend, hooks, state, asynchronous UI, testing, and an interactive algorithm lab | Explain rerenders, ownership of state, race conditions, accessibility, and failure states |
 
 Each track's README is its entry point and contains its own setup commands.
 There is deliberately **no one-command root build**: Java, Scala CLI, sbt,

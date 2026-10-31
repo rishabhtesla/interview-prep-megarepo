@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useStudy } from "./useStudy.js";
 import TopicCard from "./TopicCard.jsx";
+import AlgorithmLab from "./AlgorithmLab.jsx";
 
 export default function App() {
   const study = useStudy();
@@ -24,6 +25,7 @@ export default function App() {
         <h1>Interview Study Planner</h1>
         <p>Practice, explain your reasoning, then save your progress.</p>
         <p className="notice">Local learning demo: one shared learner, no login. Notes are stored on this machine, not in your browser.</p>
+        <AlgorithmLab />
       </header>
       {study.status === "loading" && <p role="status">Loading catalog and saved progress…</p>}
       {study.status === "error" && <section aria-label="Connection error">
