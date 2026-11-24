@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useStudy } from "./useStudy.js";
 import TopicCard from "./TopicCard.jsx";
 import AlgorithmLab from "./AlgorithmLab.jsx";
+import GeoJsonMutationLab from "./GeoJsonMutationLab.jsx";
 
 export default function App() {
   const study = useStudy();
@@ -21,11 +22,12 @@ export default function App() {
     <a className="skip-link" href="#topics">Skip to topics</a>
     <main>
       <header>
-        <p className="eyebrow">Six-track interview course</p>
+        <p className="eyebrow">Interview preparation course</p>
         <h1>Interview Study Planner</h1>
         <p>Practice, explain your reasoning, then save your progress.</p>
         <p className="notice">Local learning demo: one shared learner, no login. Notes are stored on this machine, not in your browser.</p>
         <AlgorithmLab />
+        <GeoJsonMutationLab />
       </header>
       {study.status === "loading" && <p role="status">Loading catalog and saved progress…</p>}
       {study.status === "error" && <section aria-label="Connection error">
@@ -59,7 +61,7 @@ export default function App() {
           </ul>
         </section>
       </>}
-      <footer>Course chapters and worked solutions live in the six sibling track folders. Drafts are lost on reload; saved progress survives service restarts.</footer>
+      <footer>Course chapters and worked solutions live in the sibling track folders. Drafts are lost on reload; saved progress survives service restarts.</footer>
     </main>
   </>;
 }

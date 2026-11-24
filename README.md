@@ -10,10 +10,14 @@ way to expose gaps and practice. Completing a page is not the same as mastering 
 ## Start here
 
 1. Take the diagnostic in [STUDY_PLAN.md](STUDY_PLAN.md) without looking up answers.
-2. Follow the progressive [full-stack learning path](LEARNING_PATH.md) from basics to advanced; shorten it only after passing the exit criteria.
+2. Read [how to study one topic](TOPIC_LESSON_FORMAT.md), then follow the progressive [full-stack learning path](LEARNING_PATH.md) from basics to advanced; shorten it only after passing the exit criteria.
 3. Read a topic, predict the example's behavior, run it, change an assumption, and explain the result aloud.
 4. Solve DSA problems before opening their solutions. Re-solve missed problems after 1, 3, 7, and 21 days.
 5. Use [INTERVIEW_PLAYBOOK.md](INTERVIEW_PLAYBOOK.md) for timed practice and scoring.
+
+Use [RESUME_COVERAGE.md](RESUME_COVERAGE.md) as the technology checklist. It
+separates topics that already have runnable lessons from resume technologies
+that still need their own focused reference module.
 
 ## A runnable path from basics to full stack
 
@@ -24,18 +28,26 @@ front door: it saves study progress, exposes loading/error/retry behavior, and
 includes a step-by-step binary-search visualizer. The backend failure lab then
 lets you observe what happens when a dependency is stopped.
 
-## Six learning tracks
+## Learning tracks
 
 | Track | What to study | What mastery looks like |
 | --- | --- | --- |
-| [01-core-java](01-core-java/README.md) | Language fundamentals, JVM, OOP, collections, concurrency, functional APIs | Explain correctness, allocation, complexity, and thread-safety choices with runnable examples |
-| [02-scala-basics](02-scala-basics/README.md) | Expressions, ADTs, collections, error handling, traits, type classes, futures | Model invalid states explicitly and compose transformations without accidental side effects |
-| [03-spark-distributed-computing](03-spark-distributed-computing/README.md) | Scala/PySpark batch jobs, joins, windows, partitioning, query plans, data quality | Explain where data moves, why a stage is slow, and how to make reruns safe |
-| [04-backend-spring-microservices](04-backend-spring-microservices/README.md) | REST services, persistence, validation, interservice calls, failure semantics | Trace a request across service boundaries and distinguish local transactions from distributed guarantees |
-| [05-dsa-leetcode](05-dsa-leetcode/README.md) | 50 categorized Java solutions with correctness reasoning and complexity | Derive a pattern from constraints, state its invariant, and handle boundary cases under time pressure |
-| [06-frontend-react-ui](06-frontend-react-ui/README.md) | React application connected to the backend, hooks, state, asynchronous UI, testing, and an interactive algorithm lab | Explain rerenders, ownership of state, race conditions, accessibility, and failure states |
+| [01-core-java](01-core-java/README.md) · [masterclass](01-core-java/MASTERCLASS.md) · [guide](01-core-java/LEARNING_GUIDE.md) | Language fundamentals, JVM, OOP, collections, concurrency, functional APIs | Explain correctness, allocation, complexity, and thread-safety choices with runnable examples |
+| [02-scala-basics](02-scala-basics/README.md) · [masterclass](02-scala-basics/MASTERCLASS.md) · [guide](02-scala-basics/LEARNING_GUIDE.md) | Expressions, ADTs, collections, error handling, traits, type classes, futures | Model invalid states explicitly and compose transformations without accidental side effects |
+| [03-spark-distributed-computing](03-spark-distributed-computing/README.md) · [masterclass](03-spark-distributed-computing/MASTERCLASS.md) · [guide](03-spark-distributed-computing/LEARNING_GUIDE.md) | Scala/PySpark batch jobs, joins, windows, partitioning, query plans, data quality | Explain where data moves, why a stage is slow, and how to make reruns safe |
+| [04-backend-spring-microservices](04-backend-spring-microservices/README.md) · [masterclass](04-backend-spring-microservices/MASTERCLASS.md) · [guide](04-backend-spring-microservices/LEARNING_GUIDE.md) | REST services, persistence, validation, interservice calls, failure semantics | Trace a request across service boundaries and distinguish local transactions from distributed guarantees |
+| [05-dsa-leetcode](05-dsa-leetcode/README.md) · [guide](05-dsa-leetcode/LEARNING_GUIDE.md) | Categorized Java solutions with correctness reasoning and complexity | Derive a pattern from constraints, state its invariant, and handle boundary cases under time pressure |
+| [06-frontend-react-ui](06-frontend-react-ui/README.md) · [guide](06-frontend-react-ui/LEARNING_GUIDE.md) | React application connected to the backend, hooks, state, asynchronous UI, testing, and an interactive algorithm lab | Explain rerenders, ownership of state, race conditions, accessibility, and failure states |
+| [07-python-fastapi](07-python-fastapi/README.md) | Python 3.10+, typing, async work, FastAPI validation, and API boundaries | Explain coroutine scheduling, validation, dependency boundaries, and failure handling |
+| [08-javascript-typescript-express](08-javascript-typescript-express/README.md) | Modern JavaScript, TypeScript, Promises, Express, and runtime validation | Explain event-loop behavior, type erasure, middleware order, and API errors |
+| [09-messaging-streaming](09-messaging-streaming/README.md) | Delivery semantics, retries, DLQs, Kafka, RabbitMQ, SQS, Flink, Akka, and CDC concepts | State the delivery boundary, ordering scope, retry policy, and idempotency strategy |
+| [10-storage-cloud-devops](10-storage-cloud-devops/README.md) | SQL, indexes, Redis TTL, object storage, Docker, Kubernetes, IaC, and CI/CD | Choose a storage layer, explain a deployment artifact, and diagnose a failed pipeline |
+| [11-genai-search-agents](11-genai-search-agents/README.md) | Semantic retrieval, reranking, graphs, tool-using agents, and MCP boundaries | Explain evidence, authorization, tool safety, budgets, and unsupported answers |
+| [12-enterprise-integration](12-enterprise-integration/README.md) | Apache Camel EIP routes, SOAP XML boundaries, and Eureka-style service discovery | Trace a message route, harden an XML boundary, and separate discovery from health |
 
 Each track's README is its entry point and contains its own setup commands.
+Use the track's **Learning guide** before opening the implementation; it gives
+the exact order to read, run, change, test, and explain each topic.
 There is deliberately **no one-command root build**: Java, Scala CLI, sbt,
 Python/Spark, Maven, and Node have different runtimes. Run commands from the
 directory specified in the relevant README.

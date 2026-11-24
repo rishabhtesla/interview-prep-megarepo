@@ -1,6 +1,6 @@
 # Full-stack learning path: basics to interview-ready
 
-This repository is designed to be used as a sequence, not as six unrelated
+This repository is designed to be used as a sequence, not as unrelated
 folders. Spend less time reading and more time producing evidence: a command
 that runs, a test that fails before the fix, a diagram you can explain, and a
 small feature you can defend.
@@ -21,19 +21,23 @@ rebuild the smallest example without copying it.
 | Level | Goal | Start here | Evidence to complete |
 | --- | --- | --- | --- |
 | 0. Tools | Make the repository runnable | Root README and each track README | Java 17, Maven, Node 22, and the DSA runner work |
-| 1. Programming | Build reliable language fundamentals | `01-core-java` | Explain values, references, collections, exceptions, and tests |
+| 1. Programming | Build reliable language fundamentals | [`01-core-java/MASTERCLASS.md`](01-core-java/MASTERCLASS.md) | Explain values, references, collections, exceptions, and tests |
 | 2. Problem solving | Recognize DSA patterns | `05-dsa-leetcode` | Solve one problem per pattern and state an invariant |
-| 3. Data | Query and transform data | `SQL_AND_DATA_MODELING.md`, `03-spark-distributed-computing` | Explain joins, indexes, windows, shuffles, and skew |
-| 4. Backend | Build a dependable API | `04-backend-spring-microservices` | Trace request → validation → transaction → database → response |
+| 3. Data | Query and transform data | [`03-spark-distributed-computing/MASTERCLASS.md`](03-spark-distributed-computing/MASTERCLASS.md), `SQL_AND_DATA_MODELING.md` | Explain joins, indexes, windows, shuffles, and skew |
+| 4. Backend | Build a dependable API | [`04-backend-spring-microservices/MASTERCLASS.md`](04-backend-spring-microservices/MASTERCLASS.md) | Trace request → validation → transaction → database → response |
 | 5. Frontend | Build an accessible client | `06-frontend-react-ui` | Handle render, state, effects, API failure, and keyboard use |
 | 6. Full stack | Connect and operate the system | Backend + frontend | Demonstrate a saved study item and a failed dependency |
-| 7. Advanced | Design and defend trade-offs | `SYSTEM_DESIGN.md`, `INTERVIEW_PLAYBOOK.md` | Quantify scale, failure, consistency, security, and observability |
+| 7. Messaging | Move work across boundaries | `09-messaging-streaming` | Explain retries, ordering, duplicates, state, and dead letters |
+| 8. Storage and delivery | Store and ship safely | `10-storage-cloud-devops` | Explain indexes, TTL, containers, probes, IaC, and quality gates |
+| 9. GenAI systems | Retrieve evidence and control tools | `11-genai-search-agents` | Explain retrieval, reranking, authorization, tool budgets, and MCP |
+| 10. Enterprise integration | Normalize partner boundaries | `12-enterprise-integration` | Explain Camel routing, SOAP safety, discovery, and downstream failure |
+| 11. Advanced | Design and defend trade-offs | `SYSTEM_DESIGN.md`, `INTERVIEW_PLAYBOOK.md` | Quantify scale, failure, consistency, security, and observability |
 
 ## Suggested 16-week progression
 
 ### Weeks 1–2: Java and tools
 
-- Run the ten Java lessons in order.
+- Run the zero-to-hero Java tour, then the remaining Java lessons in order.
 - Write one immutable value object and one test.
 - Explain `equals`/`hashCode`, exceptions, collections, and pass-by-value.
 - Do not start Spring before you can read the plain Java examples.
@@ -89,8 +93,22 @@ React form
 Add a test for success, validation failure, dependency failure, and duplicate
 submission. Document what is implemented and what remains a production concern.
 
-### Weeks 15–16: Interview loop
+### Week 15: Messaging, storage, and delivery
 
+- Run the local messaging simulation and change the retryable failure.
+- Explain why an acknowledgement is not a database commit.
+- Run the SQL and TTL lessons; read the Docker and Kubernetes artifacts aloud.
+- Compare a relational index, Redis TTL, S3 object, and Kafka partition.
+
+### Week 16: GenAI and interview loop
+
+- Run semantic retrieval, graph traversal, the allowlisted agent, and the
+  MCP-shaped server.
+- Add an authorization filter and explain why similarity is not authorization.
+- State which local examples are simulations and which production dependencies
+  would replace them.
+- Read the Camel/SOAP/discovery lesson and explain where partner contracts,
+  registry state, and HTTP timeouts can each fail.
 - Two timed DSA sessions each week.
 - One backend/API design session.
 - One React debugging session.

@@ -1,5 +1,9 @@
 # React.js: Zero to Hero Interview Guide
 
+Use the [step-by-step learning guide](LEARNING_GUIDE.md) to read the dashboard
+in execution order. Each step connects a user action to state, rendering,
+effects, API behavior, accessibility, and tests.
+
 This chapter is a practical React course for a Java/Spring full-stack developer.
 The goal is not to memorize API names. For every concept, you should be able to:
 
@@ -79,6 +83,26 @@ the page. Choose a target and step through binary search: the active range,
 middle element, invariant, and O(log n) reasoning are shown visually. This is
 the recommended first visualization before reading the standalone DSA
 implementations in [track 05](../05-dsa-leetcode/README.md).
+
+The **GeoJSON Mutation Lab** directly below it shows a geometry moving through
+raw, normalized, and enriched stages. Read `src/GeoJsonMutationLab.jsx` from
+the `stages` data through `linePath` and then the button state. The same
+collection can be passed to MapLibre GL in a production map:
+
+```js
+map.addSource("mutations", { type: "geojson", data: collection });
+map.addLayer({
+  id: "mutation-line",
+  type: "line",
+  source: "mutations",
+  paint: { "line-color": "#1769aa", "line-width": 3 },
+});
+```
+
+The lab deliberately uses SVG so it is runnable without tiles, tokens, or a
+network connection. MapLibre adds a geographic projection, tile style, camera,
+and WebGL lifecycle; it does not change the need to validate GeoJSON or explain
+which mutation stage is being displayed.
 
 To try the small examples below, temporarily replace `src/App.jsx` with one
 example and run `npm run dev`. Restore the file afterwards, or use a separate

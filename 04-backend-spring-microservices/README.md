@@ -1,10 +1,15 @@
 # Track 04 — Spring, persistence, and microservices
 
+Begin with the [step-by-step learning guide](LEARNING_GUIDE.md). For
+inter-service communication, use the detailed
+[HTTP communication walkthrough](INTERSERVICE_COMMUNICATION.md), which traces
+the actual request, code action, response, failure behavior, and test exercise.
+
 Build a real but deliberately small distributed study planner, then explain why it
 behaves as it does. Two independently runnable Spring Boot **3.5.6** applications
 use **JDK 17**, Maven **3.9+**, HTTP, JPA, and separate embedded H2 databases.
 The React client in [track 06](../06-frontend-react-ui/README.md) displays topics
-from all six course tracks and persists one learner's study progress.
+from the course catalog and persists one learner's study progress.
 
 ## Learning route
 
@@ -14,7 +19,8 @@ and [SQL](../SQL_AND_DATA_MODELING.md).
 
 | Stage | Time | Read / do | Evidence you should produce |
 |---|---:|---|---|
-| 1 | 60 min | Start the system; inspect [API contracts](API.md) | Successful GET, PUT, reload |
+| 0 | 60 min | [Spring masterclass](MASTERCLASS.md); run `zero-to-hero-service` | Trace request → validation → service → store → response |
+| 1 | 60 min | Start the two-service system; inspect [API contracts](API.md) | Successful GET, PUT, reload |
 | 2 | 90 min | [Course](COURSE.md), lessons 1–3 | Trace DI, validation, transaction boundary |
 | 3 | 90 min | Course, lessons 4–6 | Explain generated SQL, idempotency, isolation |
 | 4 | 90 min | Course, lessons 7–9 | Failure drill and test coverage map |
@@ -24,9 +30,23 @@ and [SQL](../SQL_AND_DATA_MODELING.md).
 
 Repeat a lesson until you can **predict → run → explain → change → test** it.
 Do not count reading as mastery. The twelve seeded topics are study-planning
-entries, not substitutes for the six folders' full curricula.
+entries, not substitutes for the sibling folders' full curricula.
 
 ## What actually runs
+
+The beginner service is deliberately independent from the distributed planner:
+
+```text
+POST /api/orders
+  -> OrderController
+  -> Bean Validation
+  -> OrderService
+  -> OrderStore (in-memory repository)
+  -> OrderResponse
+```
+
+It runs on port `8083` and teaches the local request path before the catalog and
+progress services add JPA, transactions, remote HTTP, and separate databases.
 
 ```mermaid
 flowchart LR
@@ -56,6 +76,9 @@ explicit design extensions in the course, not advertised as implemented.
   Production needs reviewed schema migrations, secrets, TLS, auth, backups,
   operational ownership, and a real deployment review.
 - Tests activate `test` and use in-memory H2; they do not erase your local files.
+- The `zero-to-hero-service` intentionally stores orders in memory; restart it
+  and the orders disappear. This makes the persistence boundary visible before
+  the JPA/H2 services are introduced.
 - Startup seeds only missing catalog IDs; it does not overwrite saved topics.
   Changing seed text does not update existing rows. For a clean catalog, stop
   catalog-service and remove only its `data/` folder after deciding its data is disposable.
@@ -82,6 +105,24 @@ existing wrapper without copying or changing it:
 # From this backend directory; workspace-specific fallback.
 ../../eureka/mvnw -f "$PWD/pom.xml" clean verify
 ```
+
+Run only the beginner service while learning the request path:
+
+```bash
+mvn -pl zero-to-hero-service spring-boot:run
+curl -fsS http://127.0.0.1:8083/actuator/health
+curl -i -X POST http://127.0.0.1:8083/api/orders \
+  -H 'Content-Type: application/json' \
+  -d '{"item":"Java course","quantity":2,"unitPriceCents":1500}'
+curl -fsS http://127.0.0.1:8083/api/orders/1
+curl -i -X POST http://127.0.0.1:8083/api/orders \
+  -H 'Content-Type: application/json' \
+  -d '{"item":"","quantity":0,"unitPriceCents":-1}'
+```
+
+The valid request returns `201 Created` with `totalCents: 3000`; the invalid
+request returns `400` with a Problem Details response. Stop the process with
+Ctrl-C before starting another service on the same terminal.
 
 **Terminal 1**, from this backend directory:
 
@@ -146,6 +187,8 @@ it is not an exactly-once delivery guarantee.
 
 | Responsibility | Files |
 |---|---|
+| Beginner request path | `zero-to-hero-service/OrderController` → `OrderService` → `OrderStore` |
+| Beginner validation/error contract | `zero-to-hero-service/OrderRequest`, `ApiErrorHandler` |
 | Bootstrapping and component scan | `CatalogApplication`, `ProgressApplication` |
 | HTTP/validation | `TopicController`, `ProgressController`, `ProgressRequest` |
 | Catalog queries / DTO conversion | `TopicService`, `Topic`, `TopicResponse` |

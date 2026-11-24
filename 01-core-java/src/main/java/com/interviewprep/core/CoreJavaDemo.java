@@ -5,6 +5,7 @@ public final class CoreJavaDemo {
     private CoreJavaDemo() {}
 
     public static void main(String[] args) throws Exception {
+        ZeroToHero.main(args);
         JvmAndValues.main(args);
         TypesGenericsExceptions.main(args);
         ObjectDesign.main(args);
@@ -15,6 +16,6 @@ public final class CoreJavaDemo {
         FunctionalPipelines.main(args);
         ModernJava17.main(args);
         TestingAndPerformance.main(args);
-        System.out.println("All 10 Java lessons passed.");
+        System.out.println("All 11 Java lessons passed.");
     }
 }

@@ -27,7 +27,8 @@ excellent DSA but no transaction understanding should not skip persistence work.
 
 ## 2. Choose a role emphasis
 
-Study all six tracks at least once, but allocate depth according to the job.
+Study the core language, DSA, data, backend, frontend, messaging, storage,
+integration, and GenAI tracks at least once, but allocate depth according to the job.
 These are suggested shares of preparation time, not claims about every interview.
 
 | Role | Java + Scala | Spark + SQL | Backend + design | DSA | React | Behavioral |

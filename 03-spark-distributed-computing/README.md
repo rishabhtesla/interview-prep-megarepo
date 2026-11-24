@@ -1,6 +1,10 @@
 # Spark and data engineering: from plans to trustworthy pipelines
 
-An interview course with **four equivalent batch labs in Scala and PySpark**,
+Use the [step-by-step learning guide](LEARNING_GUIDE.md) as the reading order.
+It explains what each job does, where data moves, which command runs it, and
+which failure or performance question to answer.
+
+An interview course with a beginner-first Spark tour plus **four equivalent batch labs in Scala and PySpark**,
 bundled inputs, deliberate bad data, executable assertions, and worked exercises.
 No cluster, cloud account, database, or external dataset is needed. Internet access
 is needed once to obtain the build/runtime dependencies.
@@ -9,6 +13,7 @@ is needed once to obtain the build/runtime dependencies.
 
 | Session | Read / do | Completion criterion |
 |---|---|---|
+| 0 — Zero to hero (90 min) | [Spark masterclass](MASTERCLASS.md), `pyspark/zero_to_hero.py`, `scala.ZeroToHero` | Create a DataFrame, identify lazy work and actions, read a plan, and state the output contract. |
 | 1 — Execution (90 min) | [Execution model](docs/01-execution-and-performance.md), word count | Draw a logical DAG; identify exchanges, task boundaries, and actions. |
 | 2 — Correctness (2 h) | [Data engineering](docs/02-correctness-and-streaming.md), sales pipeline | Explain decimal/null/time contracts and prove join cardinality. |
 | 3 — Performance (2 h) | Performance-plan and skew labs | Read a physical plan; distinguish hot keys from too few partitions. |
@@ -78,6 +83,7 @@ settings into a cluster deployment.
 .venv/bin/spark-submit --master 'local[2]' pyspark/sales_pipeline.py --data-dir data
 .venv/bin/spark-submit --master 'local[2]' pyspark/performance_plan.py --data-dir data
 .venv/bin/spark-submit --master 'local[2]' pyspark/skew_salting.py
+.venv/bin/spark-submit --master 'local[2]' pyspark/zero_to_hero.py
 ```
 
 `pyspark/course.py` contains the transformations and validation contracts.
@@ -97,6 +103,7 @@ JAR=scala/target/scala-2.12/spark-interview-course_2.12-1.0.0.jar
 .venv/bin/spark-submit --master 'local[2]' --class course.SalesPipeline "$JAR" data
 .venv/bin/spark-submit --master 'local[2]' --class course.PerformancePlan "$JAR" data
 .venv/bin/spark-submit --master 'local[2]' --class course.SkewSalting "$JAR"
+.venv/bin/spark-submit --master 'local[2]' --class course.ZeroToHero "$JAR"
 ```
 
 `spark-sql` is **Provided** in sbt: it is available at compile time, but Spark and

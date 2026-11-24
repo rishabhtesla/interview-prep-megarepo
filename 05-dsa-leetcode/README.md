@@ -1,5 +1,9 @@
 # DSA and LeetCode Patterns
 
+Start with the [step-by-step learning guide](LEARNING_GUIDE.md). Do not only
+collect solution classes: state the invariant, run the test, change an edge
+case, and explain the trade-off before moving to the next pattern.
+
 Every solution is a standalone Java 17, default-package class with a `solve`
 method (the stateful `RandomizedSet` follows the LeetCode API). Each source
 contains the official problem link, contract, invariant/logic, and complexity.

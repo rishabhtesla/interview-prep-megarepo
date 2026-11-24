@@ -1,6 +1,10 @@
 # Scala interview foundations — Scala 3
 
-Seven connected lessons covering Scala language fundamentals, immutable data,
+Start with the [step-by-step learning guide](LEARNING_GUIDE.md). It tells you
+which lesson to run, which evaluation or type action to observe, what to
+change, and which interview explanation to practice.
+
+Eight connected lessons covering Scala language fundamentals, immutable data,
 functional error handling, contextual abstraction and asynchronous composition.
 This track deliberately contains **no Spark** and uses no external libraries.
 
@@ -31,10 +35,25 @@ cached; network/proxy access to the appropriate repositories is required.
 If you already have a suitable JDK 17 selected and want no managed-JDK lookup,
 append `--jvm system` to these commands. Scala's compiler version stays pinned.
 
-Expected aggregate success: `All 7 Scala lessons passed.` Each lesson has its
+Expected aggregate success: `All 8 Scala lessons passed.` Each lesson has its
 own `main` and uses explicit checks that throw `AssertionError`; these are
 dependency-free self-checks, **not a ScalaTest/MUnit suite**. Use `run`, not
 `scala-cli test`, to execute them.
+
+## Zero-to-hero first pass
+
+Run [`ZeroToHero`](src/main/scala/ZeroToHero.scala) first. It demonstrates
+Scala 3 expressions, `val`/`var`, functions, immutable collections, case
+classes, enums, pattern matching, `Option`, `Either`, for-comprehensions,
+type classes, Java interoperability, and owned `Future` execution.
+
+```bash
+scala-cli run src/main/scala --server=false \
+  --main-class interviewprep.scalabasics.ZeroToHero
+```
+
+Use the [masterclass guide](MASTERCLASS.md) for the read-run-change-explain
+sequence. Then continue through the deeper lessons below.
 
 ## Learning path
 
@@ -45,6 +64,7 @@ lesson plus interview rehearsal; Java knowledge is helpful but not required.
 
 | Lesson / main object | Concepts | Self-check coverage |
 |---|---|---|
+| [`ZeroToHero`](src/main/scala/ZeroToHero.scala) | Beginner-first tour of the language and standard library | Values, collections, domain modeling, errors, type classes, Java interop, futures |
 | [`ValuesAndFunctions`](src/main/scala/ValuesAndFunctions.scala) | val/var, expressions, functions, by-name, recursion | Boundary classification, factorial, lazy versus repeated evaluation |
 | [`CaseClassesAndMatching`](src/main/scala/CaseClassesAndMatching.scala) | Case classes, copy, extractors, guards | Equality/hash consistency, invariants, empty/singleton matching |
 | [`CollectionPipelines`](src/main/scala/CollectionPipelines.scala) | map/flatMap/filter, reduce/folds, views | Empty cases, fold order, histogram, for versus zip, deferred work |

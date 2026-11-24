@@ -1,0 +1,26 @@
+stages:
+  - test
+  - build
+  - security
+
+python-tests:
+  stage: test
+  image: python:3.12-slim
+  script:
+    - cd 10-storage-cloud-devops
+    - python -m py_compile examples/*.py
+    - python examples/sql_lesson.py
+
+container-build:
+  stage: build
+  image: docker:27
+  services:
+    - docker:27-dind
+  script:
+    - docker build -f 10-storage-cloud-devops/docker/Dockerfile -t interview-lesson:$CI_COMMIT_SHA .
+
+dependency-review:
+  stage: security
+  image: alpine:3.20
+  script:
+    - echo "Replace this teaching placeholder with the organization's CVE scanner."

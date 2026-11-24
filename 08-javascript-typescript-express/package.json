@@ -1,0 +1,20 @@
+{
+  "name": "javascript-typescript-express-lessons",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "basics": "node src/01-basics.mjs",
+    "server": "node src/server.mjs",
+    "test": "node --test",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "express": "5.0.1"
+  },
+  "devDependencies": {
+    "typescript": "5.7.2"
+  }
+}

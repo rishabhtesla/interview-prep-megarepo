@@ -1,6 +1,10 @@
 # Core Java interview course — Java 17
 
-A ten-lesson course in language semantics, design, collections, concurrency and
+Start with the [step-by-step learning guide](LEARNING_GUIDE.md). It tells you
+which lesson to run, what action to observe, what to change, and which
+interview question must be answerable before moving on.
+
+A beginner-to-advanced course in language semantics, design, collections, concurrency and
 reasoning about correctness. This is **plain Java**, not Spring, a framework
 tutorial, or an upgrade project. Every topic has a runnable program with explicit
 self-checks; failed checks terminate with `AssertionError` even without `-ea`.
@@ -17,10 +21,25 @@ java -cp out com.interviewprep.core.CoreJavaDemo
 java -cp out com.interviewprep.core.ThreadsAndVisibility
 ```
 
-Successful aggregate execution ends with `All 10 Java lessons passed.` The last
+Successful aggregate execution ends with `All 11 Java lessons passed.` The last
 lesson checks **42,966 deterministic input/target combinations** against an
 independent reference implementation. These are educational executable checks,
 not a JUnit suite, production load test, or proof of all possible thread schedules.
+
+## Zero-to-hero first pass
+
+Run [`ZeroToHero`](src/main/java/com/interviewprep/core/ZeroToHero.java) first.
+It is a deliberately small guided tour of values, control flow, arrays, strings,
+records, interfaces, collections, generics, exceptions, streams, `Optional`,
+executors, atomics, and a hash-map interview pattern. Read one section, predict
+the checks, run it, then change one line and rerun:
+
+```bash
+java -cp out com.interviewprep.core.ZeroToHero
+```
+
+The [masterclass guide](MASTERCLASS.md) turns that executable into a
+beginner-to-interview sequence and explains when to move to the deeper lessons.
 
 ## Study progression
 
@@ -32,6 +51,7 @@ your own pace rather than treating the estimate as a guarantee.
 
 | Lesson / main class | Course focus | What the program verifies |
 |---|---|---|
+| [`ZeroToHero`](src/main/java/com/interviewprep/core/ZeroToHero.java) | Java syntax through a first interview pattern | A complete beginner-first executable tour |
 | [`JvmAndValues`](src/main/java/com/interviewprep/core/JvmAndValues.java) | JVM, GC, class loading, pass-by-value | Copied values, class identity/initialization, container references |
 | [`TypesGenericsExceptions`](src/main/java/com/interviewprep/core/TypesGenericsExceptions.java) | Primitives, boxing, PECS, exceptions | Overflow, null unboxing, array covariance, suppressed failures |
 | [`ObjectDesign`](src/main/java/com/interviewprep/core/ObjectDesign.java) | OOP, equality, interfaces, composition | Equality laws, map lookup, pricing contracts |
@@ -44,7 +64,7 @@ your own pace rather than treating the estimate as a guarantee.
 | [`TestingAndPerformance`](src/main/java/com/interviewprep/core/TestingAndPerformance.java) | Testing, debugging, tradeoffs | Boundary cases, overflow safety, exhaustive small-domain comparison |
 
 `Checks.java` is shared assertion support and `CoreJavaDemo.java` is the runner,
-not additional lessons.
+not an additional lesson.
 
 ## Revision and interview practice
 

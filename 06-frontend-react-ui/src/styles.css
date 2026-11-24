@@ -21,7 +21,60 @@ small { display: block; color: #cbd5e1; }
 button { border: 1px solid #7dd3fc; border-radius: .3rem; padding: .5rem 1rem; color: #082f49; background: #7dd3fc; cursor: pointer; margin-top: .7rem; min-height: 44px; }
 button:hover:enabled { background: #bae6fd; }
 button:disabled { opacity: .6; cursor: not-allowed; }
-.secondary-button { color: #e8eefc; background: transparent; border-color: #94a3b8; }
+.secondary-button { color: #e8eefc; background: transparent;
+}
+
+.geojson-lab {
+border: 1px solid #d5dbe5;
+border-radius: 0.75rem;
+margin: 1.5rem 0;
+padding: 1rem;
+}
+
+.lab-heading {
+align-items: start;
+display: flex;
+gap: 1rem;
+justify-content: space-between;
+}
+
+.lab-heading h2 {
+margin: 0;
+}
+
+.lab-state,
+.lab-detail {
+color: #536174;
+font-size: 0.9rem;
+}
+
+.geojson-canvas {
+background: #f7fafc;
+border: 1px solid #d5dbe5;
+border-radius: 0.5rem;
+display: block;
+height: 14rem;
+margin: 1rem 0;
+width: 100%;
+}
+
+.geojson-grid {
+fill: none;
+stroke: #dce4ef;
+stroke-width: 0.5;
+}
+
+.geojson-feature {
+fill: none;
+stroke: #1769aa;
+stroke-linecap: round;
+stroke-linejoin: round;
+stroke-width: 2;
+}
+
+.lab-actions {
+display: flex;
+gap: 0.75rem; border-color: #94a3b8; }
 :focus-visible { outline: 3px solid #fbbf24; outline-offset: 4px; }
 [role="alert"], .unsaved { color: #fde68a; }
 progress { width: min(100%, 400px); height: 1.5rem; accent-color: #38bdf8; }

@@ -4,17 +4,41 @@ import java.util.Objects;
  * LC 28 (Easy): find the first occurrence of needle in haystack.
  * https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/
  *
- * Contract: null is invalid; empty needle returns 0; absent needle returns -1.
- * Uses the standard linear-time KMP prefix-function pattern, O(n+m) time and
- * O(m) auxiliary space.
+ * <p>Contract: null is invalid; empty needle returns 0; absent needle returns -1. Uses the standard
+ * linear-time KMP prefix-function pattern, O(n+m) time and O(m) auxiliary space.
  */
 public class FindIndexFirstOccurrence {
-    public int solve(String haystack, String needle) {
-        Objects.requireNonNull(haystack); Objects.requireNonNull(needle);
-        if (needle.isEmpty()) return 0;
-        int[] prefix = new int[needle.length()];
-        for (int i = 1, j = 0; i < needle.length(); i++) { while (j > 0 && needle.charAt(i) != needle.charAt(j)) j = prefix[j - 1]; if (needle.charAt(i) == needle.charAt(j)) j++; prefix[i] = j; }
-        for (int i = 0, j = 0; i < haystack.length(); i++) { while (j > 0 && haystack.charAt(i) != needle.charAt(j)) j = prefix[j - 1]; if (haystack.charAt(i) == needle.charAt(j)) j++; if (j == needle.length()) return i - j + 1; }
-        return -1;
+  public int solve(String haystack, String needle) {
+    Objects.requireNonNull(haystack);
+    Objects.requireNonNull(needle);
+    if (needle.isEmpty()) {
+      return 0;
     }
+    int[] prefix = new int[needle.length()];
+    for (int i = 1, prefixLength = 0; i < needle.length(); i++) {
+      // Fall back to the next shorter border until the new character fits.
+      while (prefixLength > 0
+          && needle.charAt(i) != needle.charAt(prefixLength)) {
+        prefixLength = prefix[prefixLength - 1];
+      }
+      if (needle.charAt(i) == needle.charAt(prefixLength)) {
+        prefixLength++;
+      }
+      prefix[i] = prefixLength;
+    }
+    for (int i = 0, matchedLength = 0; i < haystack.length(); i++) {
+      // matchedLength is the prefix of needle matching the current suffix.
+      while (matchedLength > 0
+          && haystack.charAt(i) != needle.charAt(matchedLength)) {
+        matchedLength = prefix[matchedLength - 1];
+      }
+      if (haystack.charAt(i) == needle.charAt(matchedLength)) {
+        matchedLength++;
+      }
+      if (matchedLength == needle.length()) {
+        return i - matchedLength + 1;
+      }
+    }
+    return -1;
+  }
 }

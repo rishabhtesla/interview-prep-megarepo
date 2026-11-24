@@ -4,6 +4,7 @@ import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 import App from "./App.jsx";
 import AlgorithmLab from "./AlgorithmLab.jsx";
+import GeoJsonMutationLab from "./GeoJsonMutationLab.jsx";
 
 const topics = [
   { id: "react-effects", track: "react", title: "Render and effects", summary: "Clean up a request", minutes: 60 },
@@ -24,6 +25,15 @@ function api({ progress = [], writeError = false } = {}) {
 }
 
 describe("study planner", () => {
+  it("steps through GeoJSON mutation stages", async () => {
+    const user = userEvent.setup();
+    render(<GeoJsonMutationLab />);
+    expect(screen.getByRole("heading", { name: "Raw partner geometry" })).toBeInTheDocument();
+    await user.click(screen.getByRole("button", { name: "Next stage" }));
+    expect(screen.getByRole("heading", { name: "Normalized geometry" })).toBeInTheDocument();
+    expect(screen.getByText(/"status":"normalized"/)).toBeInTheDocument();
+  });
+
   it("steps through the binary-search visualization", async () => {
     const user = userEvent.setup();
     render(<AlgorithmLab />);

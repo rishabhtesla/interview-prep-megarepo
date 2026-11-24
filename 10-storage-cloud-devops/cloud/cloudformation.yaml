@@ -1,0 +1,17 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Disposable interview reference for an S3 bucket and SQS queue.
+Resources:
+  LessonBucket:
+    Type: AWS::S3::Bucket
+    DeletionPolicy: Delete
+    UpdateReplacePolicy: Delete
+  LessonQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      VisibilityTimeout: 60
+      MessageRetentionPeriod: 86400
+Outputs:
+  BucketName:
+    Value: !Ref LessonBucket
+  QueueUrl:
+    Value: !Ref LessonQueue
