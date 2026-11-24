@@ -57,4 +57,22 @@ public class RedundantConnection {
     }
     return node;
   }
+
+  public static void main(String[] args) {
+    int[][] edges = {{1, 2}, {1, 3}, {2, 3}};
+    int[] answer = new RedundantConnection().solve(edges);
+    int[] expected = {2, 3};
+    if (!java.util.Arrays.equals(expected, answer)) {
+      throw new AssertionError(
+          "expected "
+              + java.util.Arrays.toString(expected)
+              + ", got "
+              + java.util.Arrays.toString(answer));
+    }
+    System.out.println(
+        "RedundantConnection: "
+            + java.util.Arrays.deepToString(edges)
+            + " -> "
+            + java.util.Arrays.toString(answer));
+  }
 }

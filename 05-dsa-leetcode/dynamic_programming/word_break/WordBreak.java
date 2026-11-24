@@ -38,4 +38,14 @@ public class WordBreak {
     }
     return dp[text.length()];
   }
+
+  public static void main(String[] args) {
+    String text = "leetcode";
+    java.util.List<String> dictionary = java.util.List.of("leet", "code");
+    boolean answer = new WordBreak().solve(text, dictionary);
+    if (!answer) {
+      throw new AssertionError("expected the text to be segmentable");
+    }
+    System.out.println("WordBreak: \"" + text + "\" with " + dictionary + " -> " + answer);
+  }
 }

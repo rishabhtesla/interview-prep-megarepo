@@ -39,4 +39,14 @@ public class ValidAnagram {
       throw new IllegalArgumentException("lowercase ASCII only");
     }
   }
+
+  public static void main(String[] args) {
+    String first = "anagram";
+    String second = "nagaram";
+    boolean answer = new ValidAnagram().solve(first, second);
+    if (!answer) {
+      throw new AssertionError("expected the strings to be anagrams");
+    }
+    System.out.println("ValidAnagram: \"" + first + "\", \"" + second + "\" -> " + answer);
+  }
 }

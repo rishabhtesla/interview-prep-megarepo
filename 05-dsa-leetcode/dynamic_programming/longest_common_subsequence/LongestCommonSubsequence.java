@@ -38,4 +38,15 @@ public class LongestCommonSubsequence {
     }
     return dp[second.length()];
   }
+
+  public static void main(String[] args) {
+    String first = "abcde";
+    String second = "ace";
+    int answer = new LongestCommonSubsequence().solve(first, second);
+    if (answer != 3) {
+      throw new AssertionError("expected 3, got " + answer);
+    }
+    System.out.println(
+        "LongestCommonSubsequence: \"" + first + "\", \"" + second + "\" -> " + answer);
+  }
 }

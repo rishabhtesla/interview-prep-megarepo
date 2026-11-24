@@ -45,4 +45,13 @@ public class CharacterReplacement {
     }
     return best;
   }
+
+  public static void main(String[] args) {
+    String text = "AABABBA";
+    int answer = new CharacterReplacement().solve(text, 1);
+    if (answer != 4) {
+      throw new AssertionError("expected 4, got " + answer);
+    }
+    System.out.println("CharacterReplacement: \"" + text + "\", k=1 -> " + answer);
+  }
 }

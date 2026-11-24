@@ -39,4 +39,13 @@ public class Candy {
     }
     return (int) total;
   }
+
+  public static void main(String[] args) {
+    int[] ratings = {1, 0, 2};
+    int answer = new Candy().solve(ratings);
+    if (answer != 5) {
+      throw new AssertionError("expected 5, got " + answer);
+    }
+    System.out.println("Candy: " + java.util.Arrays.toString(ratings) + " -> " + answer);
+  }
 }

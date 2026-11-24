@@ -22,8 +22,7 @@ public class RomanToInteger {
       if (currentValue == null) {
         throw new IllegalArgumentException("unknown Roman symbol");
       }
-      int nextValue =
-          i + 1 < s.length() ? values.getOrDefault(s.charAt(i + 1), -1) : 0;
+      int nextValue = i + 1 < s.length() ? values.getOrDefault(s.charAt(i + 1), -1) : 0;
       if (nextValue < 0) {
         throw new IllegalArgumentException("unknown Roman symbol");
       }
@@ -36,5 +35,14 @@ public class RomanToInteger {
       throw new IllegalArgumentException("non-canonical Roman numeral");
     }
     return total;
+  }
+
+  public static void main(String[] args) {
+    String roman = "MCMXCIV";
+    int answer = new RomanToInteger().solve(roman);
+    if (answer != 1994) {
+      throw new AssertionError("expected 1994, got " + answer);
+    }
+    System.out.println("RomanToInteger: " + roman + " -> " + answer);
   }
 }

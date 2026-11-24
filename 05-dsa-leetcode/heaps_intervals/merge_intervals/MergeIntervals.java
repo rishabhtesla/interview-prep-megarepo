@@ -43,4 +43,18 @@ public class MergeIntervals {
     }
     return merged.toArray(int[][]::new);
   }
+
+  public static void main(String[] args) {
+    int[][] intervals = {{1, 3}, {2, 6}, {8, 10}, {15, 18}};
+    int[][] answer = new MergeIntervals().solve(intervals);
+    int[][] expected = {{1, 6}, {8, 10}, {15, 18}};
+    if (!java.util.Arrays.deepEquals(expected, answer)) {
+      throw new AssertionError(
+          "expected "
+              + java.util.Arrays.deepToString(expected)
+              + ", got "
+              + java.util.Arrays.deepToString(answer));
+    }
+    System.out.println("MergeIntervals: " + java.util.Arrays.deepToString(answer));
+  }
 }

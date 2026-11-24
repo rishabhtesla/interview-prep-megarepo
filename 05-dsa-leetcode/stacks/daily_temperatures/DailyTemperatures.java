@@ -29,4 +29,18 @@ public class DailyTemperatures {
     }
     return answer;
   }
+
+  public static void main(String[] args) {
+    int[] temperatures = {73, 74, 75, 71, 69, 72, 76, 73};
+    int[] answer = new DailyTemperatures().solve(temperatures);
+    int[] expected = {1, 1, 4, 2, 1, 1, 0, 0};
+    if (!java.util.Arrays.equals(expected, answer)) {
+      throw new AssertionError(
+          "expected "
+              + java.util.Arrays.toString(expected)
+              + ", got "
+              + java.util.Arrays.toString(answer));
+    }
+    System.out.println("DailyTemperatures: " + java.util.Arrays.toString(answer));
+  }
 }

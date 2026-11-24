@@ -56,4 +56,19 @@ public class RandomizedSet {
     }
     return values.get(random.nextInt(values.size()));
   }
+
+  public static void main(String[] args) {
+    RandomizedSet set = new RandomizedSet(new java.util.Random(0));
+    boolean insertedOne = set.insert(1);
+    boolean insertedDuplicate = set.insert(1);
+    boolean removedOne = set.remove(1);
+    boolean insertedTwo = set.insert(2);
+    int randomValue = set.getRandom();
+    if (!insertedOne || insertedDuplicate || !removedOne || !insertedTwo || randomValue != 2) {
+      throw new AssertionError("unexpected operation results");
+    }
+    System.out.println(
+        "RandomizedSet: insert(1), duplicate insert, remove(1), insert(2), getRandom() -> "
+            + randomValue);
+  }
 }

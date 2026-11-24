@@ -34,4 +34,22 @@ public class ProductExceptSelf {
     }
     return result;
   }
+
+  public static void main(String[] args) {
+    int[] nums = {1, 2, 3, 4};
+    long[] answer = new ProductExceptSelf().solve(nums);
+    long[] expected = {24, 12, 8, 6};
+    if (!java.util.Arrays.equals(expected, answer)) {
+      throw new AssertionError(
+          "expected "
+              + java.util.Arrays.toString(expected)
+              + ", got "
+              + java.util.Arrays.toString(answer));
+    }
+    System.out.println(
+        "ProductExceptSelf: "
+            + java.util.Arrays.toString(nums)
+            + " -> "
+            + java.util.Arrays.toString(answer));
+  }
 }

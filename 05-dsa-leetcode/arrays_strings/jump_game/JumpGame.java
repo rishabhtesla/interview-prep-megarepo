@@ -23,4 +23,13 @@ public class JumpGame {
     }
     return true;
   }
+
+  public static void main(String[] args) {
+    int[] nums = {2, 3, 1, 1, 4};
+    boolean answer = new JumpGame().solve(nums);
+    if (!answer) {
+      throw new AssertionError("expected the last index to be reachable");
+    }
+    System.out.println("JumpGame: " + java.util.Arrays.toString(nums) + " -> " + answer);
+  }
 }

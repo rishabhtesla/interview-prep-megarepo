@@ -23,8 +23,7 @@ public class ValidPalindrome {
       while (left < right && !alphanumeric(text.charAt(right))) {
         right--;
       }
-      if (Character.toLowerCase(text.charAt(left))
-          != Character.toLowerCase(text.charAt(right))) {
+      if (Character.toLowerCase(text.charAt(left)) != Character.toLowerCase(text.charAt(right))) {
         return false;
       }
       left++;
@@ -35,5 +34,14 @@ public class ValidPalindrome {
 
   private boolean alphanumeric(char c) {
     return c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z' || c >= '0' && c <= '9';
+  }
+
+  public static void main(String[] args) {
+    String text = "A man, a plan, a canal: Panama";
+    boolean answer = new ValidPalindrome().solve(text);
+    if (!answer) {
+      throw new AssertionError("expected a palindrome");
+    }
+    System.out.println("ValidPalindrome: \"" + text + "\" -> " + answer);
   }
 }

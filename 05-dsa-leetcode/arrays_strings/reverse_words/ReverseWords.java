@@ -31,4 +31,13 @@ public class ReverseWords {
     }
     return out.toString();
   }
+
+  public static void main(String[] args) {
+    String text = "the sky is blue";
+    String answer = new ReverseWords().solve(text);
+    if (!"blue is sky the".equals(answer)) {
+      throw new AssertionError("expected reversed words, got " + answer);
+    }
+    System.out.println("ReverseWords: \"" + text + "\" -> \"" + answer + "\"");
+  }
 }

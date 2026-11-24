@@ -37,4 +37,13 @@ public class LongestConsecutive {
     }
     return best;
   }
+
+  public static void main(String[] args) {
+    int[] nums = {100, 4, 200, 1, 3, 2};
+    int answer = new LongestConsecutive().solve(nums);
+    if (answer != 4) {
+      throw new AssertionError("expected 4, got " + answer);
+    }
+    System.out.println("LongestConsecutive: " + java.util.Arrays.toString(nums) + " -> " + answer);
+  }
 }

@@ -48,4 +48,13 @@ public class Permutations {
       used[i] = false;
     }
   }
+
+  public static void main(String[] args) {
+    int[] nums = {1, 2, 3};
+    java.util.List<java.util.List<Integer>> answer = new Permutations().solve(nums);
+    if (answer.size() != 6 || !answer.contains(java.util.List.of(1, 2, 3))) {
+      throw new AssertionError("unexpected permutations: " + answer);
+    }
+    System.out.println("Permutations: " + java.util.Arrays.toString(nums) + " -> " + answer);
+  }
 }

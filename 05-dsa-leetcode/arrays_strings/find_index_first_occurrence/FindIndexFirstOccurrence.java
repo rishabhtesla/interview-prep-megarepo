@@ -17,8 +17,7 @@ public class FindIndexFirstOccurrence {
     int[] prefix = new int[needle.length()];
     for (int i = 1, prefixLength = 0; i < needle.length(); i++) {
       // Fall back to the next shorter border until the new character fits.
-      while (prefixLength > 0
-          && needle.charAt(i) != needle.charAt(prefixLength)) {
+      while (prefixLength > 0 && needle.charAt(i) != needle.charAt(prefixLength)) {
         prefixLength = prefix[prefixLength - 1];
       }
       if (needle.charAt(i) == needle.charAt(prefixLength)) {
@@ -28,8 +27,7 @@ public class FindIndexFirstOccurrence {
     }
     for (int i = 0, matchedLength = 0; i < haystack.length(); i++) {
       // matchedLength is the prefix of needle matching the current suffix.
-      while (matchedLength > 0
-          && haystack.charAt(i) != needle.charAt(matchedLength)) {
+      while (matchedLength > 0 && haystack.charAt(i) != needle.charAt(matchedLength)) {
         matchedLength = prefix[matchedLength - 1];
       }
       if (haystack.charAt(i) == needle.charAt(matchedLength)) {
@@ -40,5 +38,16 @@ public class FindIndexFirstOccurrence {
       }
     }
     return -1;
+  }
+
+  public static void main(String[] args) {
+    String haystack = "sadbutsad";
+    String needle = "sad";
+    int answer = new FindIndexFirstOccurrence().solve(haystack, needle);
+    if (answer != 0) {
+      throw new AssertionError("expected index 0, got " + answer);
+    }
+    System.out.println(
+        "FindIndexFirstOccurrence: \"" + needle + "\" in \"" + haystack + "\" -> " + answer);
   }
 }

@@ -32,4 +32,14 @@ public class ContainerMostWater {
     }
     return best;
   }
+
+  public static void main(String[] args) {
+    int[] heights = {1, 8, 6, 2, 5, 4, 8, 3, 7};
+    long answer = new ContainerMostWater().solve(heights);
+    if (answer != 49) {
+      throw new AssertionError("expected 49, got " + answer);
+    }
+    System.out.println(
+        "ContainerMostWater: " + java.util.Arrays.toString(heights) + " -> " + answer);
+  }
 }

@@ -20,4 +20,15 @@ public class RemoveElement {
     }
     return writeIndex;
   }
+
+  public static void main(String[] args) {
+    int[] nums = {3, 2, 2, 3};
+    int length = new RemoveElement().solve(nums, 3);
+    int[] expectedPrefix = {2, 2};
+    if (length != 2
+        || !java.util.Arrays.equals(expectedPrefix, java.util.Arrays.copyOf(nums, length))) {
+      throw new AssertionError("unexpected compact prefix: " + java.util.Arrays.toString(nums));
+    }
+    System.out.println("RemoveElement: " + java.util.Arrays.toString(nums) + ", length=" + length);
+  }
 }

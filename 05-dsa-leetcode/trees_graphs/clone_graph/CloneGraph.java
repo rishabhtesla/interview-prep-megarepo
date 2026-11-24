@@ -40,4 +40,18 @@ public class CloneGraph {
     }
     return copies.get(start);
   }
+
+  public static void main(String[] args) {
+    GraphNode one = new GraphNode(1);
+    GraphNode two = new GraphNode(2);
+    one.neighbors.add(two);
+    two.neighbors.add(one);
+    GraphNode clone = new CloneGraph().solve(one);
+    if (clone == one
+        || clone.neighbors.get(0) == two
+        || clone.neighbors.get(0).neighbors.get(0) != clone) {
+      throw new AssertionError("graph was not deeply cloned");
+    }
+    System.out.println("CloneGraph: 1 <-> 2 -> cloned distinct nodes");
+  }
 }

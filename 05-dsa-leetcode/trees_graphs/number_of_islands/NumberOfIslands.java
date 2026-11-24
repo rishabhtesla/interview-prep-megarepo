@@ -56,4 +56,18 @@ public class NumberOfIslands {
     }
     return islands;
   }
+
+  public static void main(String[] args) {
+    char[][] grid = {
+      {'1', '1', '0', '0', '0'},
+      {'1', '1', '0', '0', '0'},
+      {'0', '0', '1', '0', '0'},
+      {'0', '0', '0', '1', '1'}
+    };
+    int answer = new NumberOfIslands().solve(grid);
+    if (answer != 3) {
+      throw new AssertionError("expected 3 islands, got " + answer);
+    }
+    System.out.println("NumberOfIslands: -> " + answer + " (grid consumed as visited state)");
+  }
 }

@@ -34,4 +34,13 @@ public class JumpGameII {
     }
     return currentLayerEnd >= nums.length - 1 ? jumps : -1;
   }
+
+  public static void main(String[] args) {
+    int[] nums = {2, 3, 1, 1, 4};
+    int answer = new JumpGameII().solve(nums);
+    if (answer != 2) {
+      throw new AssertionError("expected 2 jumps, got " + answer);
+    }
+    System.out.println("JumpGameII: " + java.util.Arrays.toString(nums) + " -> " + answer);
+  }
 }

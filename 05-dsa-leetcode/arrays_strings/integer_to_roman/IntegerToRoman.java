@@ -22,4 +22,13 @@ public class IntegerToRoman {
     }
     return out.toString();
   }
+
+  public static void main(String[] args) {
+    int number = 1994;
+    String answer = new IntegerToRoman().solve(number);
+    if (!"MCMXCIV".equals(answer)) {
+      throw new AssertionError("expected MCMXCIV, got " + answer);
+    }
+    System.out.println("IntegerToRoman: " + number + " -> " + answer);
+  }
 }

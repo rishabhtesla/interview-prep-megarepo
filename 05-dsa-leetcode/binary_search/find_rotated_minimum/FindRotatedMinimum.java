@@ -30,4 +30,13 @@ public class FindRotatedMinimum {
     }
     return nums[low];
   }
+
+  public static void main(String[] args) {
+    int[] nums = {3, 4, 5, 1, 2};
+    int answer = new FindRotatedMinimum().solve(nums);
+    if (answer != 1) {
+      throw new AssertionError("expected 1, got " + answer);
+    }
+    System.out.println("FindRotatedMinimum: " + java.util.Arrays.toString(nums) + " -> " + answer);
+  }
 }

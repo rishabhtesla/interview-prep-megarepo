@@ -25,4 +25,13 @@ public class ContainsDuplicate {
     }
     return false;
   }
+
+  public static void main(String[] args) {
+    int[] nums = {1, 2, 3, 1};
+    boolean answer = new ContainsDuplicate().solve(nums);
+    if (!answer) {
+      throw new AssertionError("expected a duplicate");
+    }
+    System.out.println("ContainsDuplicate: " + java.util.Arrays.toString(nums) + " -> " + answer);
+  }
 }

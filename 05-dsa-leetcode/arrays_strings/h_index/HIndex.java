@@ -26,4 +26,13 @@ public class HIndex {
     }
     return h;
   }
+
+  public static void main(String[] args) {
+    int[] citations = {3, 0, 6, 1, 5};
+    int answer = new HIndex().solve(citations);
+    if (answer != 3) {
+      throw new AssertionError("expected 3, got " + answer);
+    }
+    System.out.println("HIndex: " + java.util.Arrays.toString(citations) + " -> " + answer);
+  }
 }

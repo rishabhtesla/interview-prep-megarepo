@@ -41,4 +41,15 @@ public class Subsets {
       path.remove(path.size() - 1);
     }
   }
+
+  public static void main(String[] args) {
+    int[] nums = {1, 2, 3};
+    java.util.List<java.util.List<Integer>> answer = new Subsets().solve(nums);
+    if (answer.size() != 8
+        || !answer.contains(java.util.List.of(1, 2, 3))
+        || !answer.contains(java.util.List.of())) {
+      throw new AssertionError("unexpected subsets: " + answer);
+    }
+    System.out.println("Subsets: " + java.util.Arrays.toString(nums) + " -> " + answer);
+  }
 }

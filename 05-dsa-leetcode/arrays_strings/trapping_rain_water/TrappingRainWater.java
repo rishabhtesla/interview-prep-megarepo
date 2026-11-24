@@ -36,4 +36,14 @@ public class TrappingRainWater {
     }
     return (int) water;
   }
+
+  public static void main(String[] args) {
+    int[] heights = {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
+    int answer = new TrappingRainWater().solve(heights);
+    if (answer != 6) {
+      throw new AssertionError("expected 6, got " + answer);
+    }
+    System.out.println(
+        "TrappingRainWater: " + java.util.Arrays.toString(heights) + " -> " + answer);
+  }
 }

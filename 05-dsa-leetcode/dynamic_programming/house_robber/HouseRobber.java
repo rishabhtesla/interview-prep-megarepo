@@ -28,4 +28,13 @@ public class HouseRobber {
     }
     return oneBack;
   }
+
+  public static void main(String[] args) {
+    int[] houses = {2, 7, 9, 3, 1};
+    long answer = new HouseRobber().solve(houses);
+    if (answer != 12) {
+      throw new AssertionError("expected 12, got " + answer);
+    }
+    System.out.println("HouseRobber: " + java.util.Arrays.toString(houses) + " -> " + answer);
+  }
 }

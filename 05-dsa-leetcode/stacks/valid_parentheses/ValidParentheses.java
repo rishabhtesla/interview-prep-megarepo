@@ -36,4 +36,13 @@ public class ValidParentheses {
     }
     return expected.isEmpty();
   }
+
+  public static void main(String[] args) {
+    String text = "()[]{}";
+    boolean answer = new ValidParentheses().solve(text);
+    if (!answer) {
+      throw new AssertionError("expected valid brackets");
+    }
+    System.out.println("ValidParentheses: \"" + text + "\" -> " + answer);
+  }
 }

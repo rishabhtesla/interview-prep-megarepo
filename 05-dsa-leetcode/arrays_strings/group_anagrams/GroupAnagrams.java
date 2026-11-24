@@ -33,4 +33,16 @@ public class GroupAnagrams {
     }
     return new ArrayList<>(groups.values());
   }
+
+  public static void main(String[] args) {
+    String[] words = {"eat", "tea", "tan", "ate", "nat", "bat"};
+    java.util.List<java.util.List<String>> answer = new GroupAnagrams().solve(words);
+    if (answer.size() != 3
+        || !answer.contains(java.util.List.of("eat", "tea", "ate"))
+        || !answer.contains(java.util.List.of("tan", "nat"))
+        || !answer.contains(java.util.List.of("bat"))) {
+      throw new AssertionError("unexpected groups: " + answer);
+    }
+    System.out.println("GroupAnagrams: " + java.util.Arrays.toString(words) + " -> " + answer);
+  }
 }

@@ -36,4 +36,14 @@ public class LongestIncreasingSubsequence {
     }
     return length;
   }
+
+  public static void main(String[] args) {
+    int[] nums = {10, 9, 2, 5, 3, 7, 101, 18};
+    int answer = new LongestIncreasingSubsequence().solve(nums);
+    if (answer != 4) {
+      throw new AssertionError("expected 4, got " + answer);
+    }
+    System.out.println(
+        "LongestIncreasingSubsequence: " + java.util.Arrays.toString(nums) + " -> " + answer);
+  }
 }

@@ -40,4 +40,16 @@ public class LevelOrder {
     }
     return levels;
   }
+
+  public static void main(String[] args) {
+    TreeNode root =
+        new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
+    java.util.List<java.util.List<Integer>> answer = new LevelOrder().solve(root);
+    java.util.List<java.util.List<Integer>> expected =
+        java.util.List.of(java.util.List.of(3), java.util.List.of(9, 20), java.util.List.of(15, 7));
+    if (!expected.equals(answer)) {
+      throw new AssertionError("expected " + expected + ", got " + answer);
+    }
+    System.out.println("LevelOrder: -> " + answer);
+  }
 }

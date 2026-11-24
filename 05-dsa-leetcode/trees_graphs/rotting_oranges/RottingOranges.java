@@ -56,4 +56,13 @@ public class RottingOranges {
     }
     return fresh == 0 ? minutes : -1;
   }
+
+  public static void main(String[] args) {
+    int[][] grid = {{2, 1, 1}, {1, 1, 0}, {0, 1, 1}};
+    int answer = new RottingOranges().solve(grid);
+    if (answer != 4) {
+      throw new AssertionError("expected 4 minutes, got " + answer);
+    }
+    System.out.println("RottingOranges: -> " + answer + " minutes");
+  }
 }

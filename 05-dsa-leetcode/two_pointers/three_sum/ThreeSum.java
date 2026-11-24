@@ -45,4 +45,15 @@ public class ThreeSum {
     }
     return result;
   }
+
+  public static void main(String[] args) {
+    int[] nums = {-1, 0, 1, 2, -1, -4};
+    java.util.List<java.util.List<Integer>> answer = new ThreeSum().solve(nums);
+    java.util.List<java.util.List<Integer>> expected =
+        java.util.List.of(java.util.List.of(-1, -1, 2), java.util.List.of(-1, 0, 1));
+    if (!expected.equals(answer)) {
+      throw new AssertionError("expected " + expected + ", got " + answer);
+    }
+    System.out.println("ThreeSum: " + java.util.Arrays.toString(nums) + " -> " + answer);
+  }
 }

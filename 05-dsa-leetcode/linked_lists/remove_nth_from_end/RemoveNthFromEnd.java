@@ -32,4 +32,19 @@ public class RemoveNthFromEnd {
     slow.next = slow.next.next;
     return dummy.next;
   }
+
+  public static void main(String[] args) {
+    ListNode head =
+        new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
+    ListNode answer = new RemoveNthFromEnd().solve(head, 2);
+    java.util.List<Integer> values = new java.util.ArrayList<>();
+    for (ListNode node = answer; node != null; node = node.next) {
+      values.add(node.value);
+    }
+    java.util.List<Integer> expected = java.util.List.of(1, 2, 3, 5);
+    if (!expected.equals(values)) {
+      throw new AssertionError("expected " + expected + ", got " + values);
+    }
+    System.out.println("RemoveNthFromEnd: n=2 -> " + values);
+  }
 }

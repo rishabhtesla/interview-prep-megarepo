@@ -37,4 +37,13 @@ public class LargestRectangle {
     }
     return best;
   }
+
+  public static void main(String[] args) {
+    int[] heights = {2, 1, 5, 6, 2, 3};
+    long answer = new LargestRectangle().solve(heights);
+    if (answer != 10) {
+      throw new AssertionError("expected 10, got " + answer);
+    }
+    System.out.println("LargestRectangle: " + java.util.Arrays.toString(heights) + " -> " + answer);
+  }
 }

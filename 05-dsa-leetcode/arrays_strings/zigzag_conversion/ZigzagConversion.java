@@ -37,4 +37,13 @@ public class ZigzagConversion {
     }
     return out.toString();
   }
+
+  public static void main(String[] args) {
+    String text = "PAYPALISHIRING";
+    String answer = new ZigzagConversion().solve(text, 3);
+    if (!"PAHNAPLSIIGYIR".equals(answer)) {
+      throw new AssertionError("expected PAHNAPLSIIGYIR, got " + answer);
+    }
+    System.out.println("ZigzagConversion: rows=3 -> " + answer);
+  }
 }

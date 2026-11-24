@@ -25,4 +25,14 @@ public class BestTimeToBuyAndSellStockII {
     }
     return (int) profit;
   }
+
+  public static void main(String[] args) {
+    int[] prices = {7, 1, 5, 3, 6, 4};
+    int answer = new BestTimeToBuyAndSellStockII().solve(prices);
+    if (answer != 7) {
+      throw new AssertionError("expected 7, got " + answer);
+    }
+    System.out.println(
+        "BestTimeToBuyAndSellStockII: " + java.util.Arrays.toString(prices) + " -> " + answer);
+  }
 }

@@ -34,4 +34,18 @@ public class RotateArray {
       high--;
     }
   }
+
+  public static void main(String[] args) {
+    int[] nums = {1, 2, 3, 4, 5, 6, 7};
+    int[] answer = new RotateArray().solve(nums, 3);
+    int[] expected = {5, 6, 7, 1, 2, 3, 4};
+    if (!java.util.Arrays.equals(expected, answer)) {
+      throw new AssertionError(
+          "expected "
+              + java.util.Arrays.toString(expected)
+              + ", got "
+              + java.util.Arrays.toString(answer));
+    }
+    System.out.println("RotateArray: k=3 -> " + java.util.Arrays.toString(answer));
+  }
 }

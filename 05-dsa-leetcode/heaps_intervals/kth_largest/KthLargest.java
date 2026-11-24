@@ -28,4 +28,13 @@ public class KthLargest {
     }
     return heap.element();
   }
+
+  public static void main(String[] args) {
+    int[] nums = {3, 2, 1, 5, 6, 4};
+    int answer = new KthLargest().solve(nums, 2);
+    if (answer != 5) {
+      throw new AssertionError("expected 5, got " + answer);
+    }
+    System.out.println("KthLargest: k=2 in " + java.util.Arrays.toString(nums) + " -> " + answer);
+  }
 }

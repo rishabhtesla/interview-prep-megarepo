@@ -31,4 +31,19 @@ public class TwoSumSorted {
     }
     return new int[0];
   }
+
+  public static void main(String[] args) {
+    int[] nums = {2, 7, 11, 15};
+    int[] answer = new TwoSumSorted().solve(nums, 9);
+    int[] expected = {1, 2};
+    if (!java.util.Arrays.equals(expected, answer)) {
+      throw new AssertionError(
+          "expected "
+              + java.util.Arrays.toString(expected)
+              + ", got "
+              + java.util.Arrays.toString(answer));
+    }
+    System.out.println(
+        "TwoSumSorted: target=9 -> one-based indices " + java.util.Arrays.toString(answer));
+  }
 }

@@ -27,4 +27,14 @@ public class Diameter {
     best[0] = Math.max(best[0], left + right);
     return 1 + Math.max(left, right);
   }
+
+  public static void main(String[] args) {
+    TreeNode root =
+        new TreeNode(1, new TreeNode(2, new TreeNode(4), new TreeNode(5)), new TreeNode(3));
+    int answer = new Diameter().solve(root);
+    if (answer != 3) {
+      throw new AssertionError("expected diameter 3, got " + answer);
+    }
+    System.out.println("Diameter: tree rooted at 1 -> " + answer + " edges");
+  }
 }

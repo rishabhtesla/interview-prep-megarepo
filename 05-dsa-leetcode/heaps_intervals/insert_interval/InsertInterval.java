@@ -57,4 +57,18 @@ public class InsertInterval {
       throw new IllegalArgumentException("invalid interval");
     }
   }
+
+  public static void main(String[] args) {
+    int[][] intervals = {{1, 3}, {6, 9}};
+    int[][] answer = new InsertInterval().solve(intervals, new int[] {2, 5});
+    int[][] expected = {{1, 5}, {6, 9}};
+    if (!java.util.Arrays.deepEquals(expected, answer)) {
+      throw new AssertionError(
+          "expected "
+              + java.util.Arrays.deepToString(expected)
+              + ", got "
+              + java.util.Arrays.deepToString(answer));
+    }
+    System.out.println("InsertInterval: " + java.util.Arrays.deepToString(answer));
+  }
 }

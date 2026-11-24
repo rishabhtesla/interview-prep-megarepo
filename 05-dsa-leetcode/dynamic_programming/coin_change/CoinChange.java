@@ -39,4 +39,14 @@ public class CoinChange {
     }
     return dp[amount] == unreachable ? -1 : dp[amount];
   }
+
+  public static void main(String[] args) {
+    int[] coins = {1, 2, 5};
+    int answer = new CoinChange().solve(coins, 11);
+    if (answer != 3) {
+      throw new AssertionError("expected 3 coins, got " + answer);
+    }
+    System.out.println(
+        "CoinChange: coins=" + java.util.Arrays.toString(coins) + ", amount=11 -> " + answer);
+  }
 }

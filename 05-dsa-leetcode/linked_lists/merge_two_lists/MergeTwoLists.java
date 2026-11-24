@@ -29,4 +29,19 @@ public class MergeTwoLists {
     tail.next = first != null ? first : second;
     return dummy.next;
   }
+
+  public static void main(String[] args) {
+    ListNode first = new ListNode(1, new ListNode(2, new ListNode(4)));
+    ListNode second = new ListNode(1, new ListNode(3, new ListNode(4)));
+    ListNode merged = new MergeTwoLists().solve(first, second);
+    java.util.List<Integer> values = new java.util.ArrayList<>();
+    for (ListNode node = merged; node != null; node = node.next) {
+      values.add(node.value);
+    }
+    java.util.List<Integer> expected = java.util.List.of(1, 1, 2, 3, 4, 4);
+    if (!expected.equals(values)) {
+      throw new AssertionError("expected " + expected + ", got " + values);
+    }
+    System.out.println("MergeTwoLists: -> " + values);
+  }
 }

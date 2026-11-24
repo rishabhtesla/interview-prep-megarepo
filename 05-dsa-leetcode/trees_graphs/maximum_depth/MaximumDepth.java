@@ -18,4 +18,14 @@ public class MaximumDepth {
     // The root contributes one node, followed by the deeper child path.
     return 1 + Math.max(solve(root.left), solve(root.right));
   }
+
+  public static void main(String[] args) {
+    TreeNode root =
+        new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
+    int answer = new MaximumDepth().solve(root);
+    if (answer != 3) {
+      throw new AssertionError("expected depth 3, got " + answer);
+    }
+    System.out.println("MaximumDepth: -> " + answer);
+  }
 }

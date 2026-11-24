@@ -12,11 +12,7 @@ public class MergeSortedArray {
   public int[] solve(int[] nums1, int m, int[] nums2, int n) {
     Objects.requireNonNull(nums1);
     Objects.requireNonNull(nums2);
-    if (m < 0
-        || n < 0
-        || m > nums1.length
-        || n > nums2.length
-        || (long) m + n > nums1.length) {
+    if (m < 0 || n < 0 || m > nums1.length || n > nums2.length || (long) m + n > nums1.length) {
       throw new IllegalArgumentException("invalid sorted-array lengths");
     }
 
@@ -36,5 +32,20 @@ public class MergeSortedArray {
       writeIndex--;
     }
     return nums1;
+  }
+
+  public static void main(String[] args) {
+    int[] first = {1, 2, 3, 0, 0, 0};
+    int[] second = {2, 5, 6};
+    int[] answer = new MergeSortedArray().solve(first, 3, second, 3);
+    int[] expected = {1, 2, 2, 3, 5, 6};
+    if (!java.util.Arrays.equals(expected, answer)) {
+      throw new AssertionError(
+          "expected "
+              + java.util.Arrays.toString(expected)
+              + ", got "
+              + java.util.Arrays.toString(answer));
+    }
+    System.out.println("MergeSortedArray: " + java.util.Arrays.toString(answer));
   }
 }

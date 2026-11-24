@@ -4,9 +4,12 @@ Start with the [step-by-step learning guide](LEARNING_GUIDE.md). Do not only
 collect solution classes: state the invariant, run the test, change an edge
 case, and explain the trade-off before moving to the next pattern.
 
-Every solution is a standalone Java 17, default-package class with a `solve`
-method (the stateful `RandomizedSet` follows the LeetCode API). Each source
-contains the official problem link, contract, invariant/logic, and complexity.
+Every solution is a standalone Java 17, default-package class with a `main`
+method and a `solve` method (the stateful `RandomizedSet` follows the LeetCode
+API). The `main` method runs a small named example, checks the expected result,
+and prints the output so you can set breakpoints and inspect the algorithm.
+Each source contains the official problem link, contract, invariant/logic, and
+complexity.
 
 ## Basic → advanced catalog
 
@@ -53,13 +56,35 @@ Complete source index: [Permutations](backtracking/permutations/Permutations.jav
 
 ## Compile and run
 
-Compile one solution (the class is in the default package):
+Compile and run one solution (the class is in the default package):
 
 ```bash
 mkdir -p out
-javac --release 17 -d out arrays_strings/product_except_self/ProductExceptSelf.java
-jshell --class-path out
+javac --release 17 -Xlint:all -Werror -d out \
+  support/*.java arrays_strings/product_except_self/ProductExceptSelf.java
+java -cp out ProductExceptSelf
 ```
+
+For an array/string solution, the `support/*.java` part is harmless. It is
+required by linked-list, tree, and graph examples because those lessons use the
+shared `ListNode`, `TreeNode`, and `GraphNode` types:
+
+```bash
+javac --release 17 -Xlint:all -Werror -d out \
+  support/*.java trees_graphs/level_order/LevelOrder.java
+java -cp out LevelOrder
+```
+
+Run every example, one class at a time:
+
+```bash
+./run-examples.sh
+```
+
+The script compiles all 73 solutions, runs every `main`, and stops at the first
+failed assertion. To debug one algorithm, open its source, set a breakpoint in
+`solve`, and run the matching `java -cp out ClassName` command. The sample
+inputs are intentionally small enough to trace by hand.
 
 Run the complete deterministic regression suite:
 

@@ -47,4 +47,14 @@ public class KokoBananas {
     }
     return low;
   }
+
+  public static void main(String[] args) {
+    int[] piles = {3, 6, 7, 11};
+    int answer = new KokoBananas().solve(piles, 8L);
+    if (answer != 4) {
+      throw new AssertionError("expected speed 4, got " + answer);
+    }
+    System.out.println(
+        "KokoBananas: piles=" + java.util.Arrays.toString(piles) + ", hours=8 -> " + answer);
+  }
 }

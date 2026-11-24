@@ -25,4 +25,13 @@ public class ClimbingStairs {
     }
     return oneBack;
   }
+
+  public static void main(String[] args) {
+    int steps = 5;
+    long answer = new ClimbingStairs().solve(steps);
+    if (answer != 8) {
+      throw new AssertionError("expected 8, got " + answer);
+    }
+    System.out.println("ClimbingStairs: n=5 -> " + answer);
+  }
 }

@@ -40,4 +40,17 @@ public class LowestCommonAncestorBST {
     }
     return false;
   }
+
+  public static void main(String[] args) {
+    TreeNode root =
+        new TreeNode(
+            6,
+            new TreeNode(2, new TreeNode(0), new TreeNode(4)),
+            new TreeNode(8, new TreeNode(7), new TreeNode(9)));
+    TreeNode answer = new LowestCommonAncestorBST().solve(root, 2, 8);
+    if (answer == null || answer.value != 6) {
+      throw new AssertionError("expected LCA 6, got " + (answer == null ? "null" : answer.value));
+    }
+    System.out.println("LowestCommonAncestorBST: keys 2 and 8 -> " + answer.value);
+  }
 }

@@ -28,4 +28,13 @@ public class MaximumSubarray {
     }
     return best;
   }
+
+  public static void main(String[] args) {
+    int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+    long answer = new MaximumSubarray().solve(nums);
+    if (answer != 6) {
+      throw new AssertionError("expected 6, got " + answer);
+    }
+    System.out.println("MaximumSubarray: " + java.util.Arrays.toString(nums) + " -> " + answer);
+  }
 }

@@ -31,4 +31,13 @@ public class LongestSubstring {
     }
     return best;
   }
+
+  public static void main(String[] args) {
+    String text = "abcabcbb";
+    int answer = new LongestSubstring().solve(text);
+    if (answer != 3) {
+      throw new AssertionError("expected 3, got " + answer);
+    }
+    System.out.println("LongestSubstring: \"" + text + "\" -> " + answer);
+  }
 }

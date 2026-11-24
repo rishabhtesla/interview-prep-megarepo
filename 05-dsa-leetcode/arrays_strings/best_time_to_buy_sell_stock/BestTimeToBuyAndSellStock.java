@@ -23,4 +23,14 @@ public class BestTimeToBuyAndSellStock {
     }
     return bestProfit;
   }
+
+  public static void main(String[] args) {
+    int[] prices = {7, 1, 5, 3, 6, 4};
+    int answer = new BestTimeToBuyAndSellStock().solve(prices);
+    if (answer != 5) {
+      throw new AssertionError("expected 5, got " + answer);
+    }
+    System.out.println(
+        "BestTimeToBuyAndSellStock: " + java.util.Arrays.toString(prices) + " -> " + answer);
+  }
 }

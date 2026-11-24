@@ -48,4 +48,19 @@ public class TopKFrequent {
     }
     return result;
   }
+
+  public static void main(String[] args) {
+    int[] nums = {1, 1, 1, 2, 2, 3};
+    int[] answer = new TopKFrequent().solve(nums, 2);
+    java.util.Arrays.sort(answer);
+    int[] expected = {1, 2};
+    if (!java.util.Arrays.equals(expected, answer)) {
+      throw new AssertionError(
+          "expected "
+              + java.util.Arrays.toString(expected)
+              + ", got "
+              + java.util.Arrays.toString(answer));
+    }
+    System.out.println("TopKFrequent: k=2 -> " + java.util.Arrays.toString(answer));
+  }
 }

@@ -20,4 +20,16 @@ public class RemoveDuplicatesII {
     }
     return writeIndex;
   }
+
+  public static void main(String[] args) {
+    int[] nums = {0, 0, 1, 1, 1, 1, 2, 3, 3};
+    int length = new RemoveDuplicatesII().solve(nums);
+    int[] expectedPrefix = {0, 0, 1, 1, 2, 3, 3};
+    if (length != expectedPrefix.length
+        || !java.util.Arrays.equals(expectedPrefix, java.util.Arrays.copyOf(nums, length))) {
+      throw new AssertionError("unexpected compact prefix: " + java.util.Arrays.toString(nums));
+    }
+    System.out.println(
+        "RemoveDuplicatesII: " + java.util.Arrays.toString(nums) + ", length=" + length);
+  }
 }

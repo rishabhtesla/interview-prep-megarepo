@@ -40,4 +40,14 @@ public class SearchRotated {
     }
     return -1;
   }
+
+  public static void main(String[] args) {
+    int[] nums = {4, 5, 6, 7, 0, 1, 2};
+    int answer = new SearchRotated().solve(nums, 0);
+    if (answer != 4) {
+      throw new AssertionError("expected index 4, got " + answer);
+    }
+    System.out.println(
+        "SearchRotated: target=0 in " + java.util.Arrays.toString(nums) + " -> " + answer);
+  }
 }

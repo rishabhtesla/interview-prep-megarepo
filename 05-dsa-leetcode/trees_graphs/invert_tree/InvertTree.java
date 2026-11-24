@@ -29,4 +29,21 @@ public class InvertTree {
     }
     return root;
   }
+
+  public static void main(String[] args) {
+    TreeNode root =
+        new TreeNode(
+            4,
+            new TreeNode(2, new TreeNode(1), new TreeNode(3)),
+            new TreeNode(7, new TreeNode(6), new TreeNode(9)));
+    TreeNode answer = new InvertTree().solve(root);
+    if (answer != root || answer.left.value != 7 || answer.right.value != 2) {
+      throw new AssertionError("tree was not inverted correctly");
+    }
+    System.out.println(
+        "InvertTree: root 4 with children 2,7 -> children "
+            + answer.left.value
+            + ","
+            + answer.right.value);
+  }
 }

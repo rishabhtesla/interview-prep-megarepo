@@ -58,4 +58,14 @@ public class CourseSchedule {
     }
     return completed == n;
   }
+
+  public static void main(String[] args) {
+    int[][] prerequisites = {{1, 0}};
+    boolean answer = new CourseSchedule().solve(2, prerequisites);
+    if (!answer) {
+      throw new AssertionError("expected both courses to be schedulable");
+    }
+    System.out.println(
+        "CourseSchedule: " + java.util.Arrays.deepToString(prerequisites) + " -> " + answer);
+  }
 }

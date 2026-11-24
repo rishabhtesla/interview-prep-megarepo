@@ -24,4 +24,13 @@ public class ValidateBST {
         && valid(node.left, low, node.value)
         && valid(node.right, node.value, high);
   }
+
+  public static void main(String[] args) {
+    TreeNode root = new TreeNode(2, new TreeNode(1), new TreeNode(3));
+    boolean answer = new ValidateBST().solve(root);
+    if (!answer) {
+      throw new AssertionError("expected a valid BST");
+    }
+    System.out.println("ValidateBST: [1,2,3] -> " + answer);
+  }
 }

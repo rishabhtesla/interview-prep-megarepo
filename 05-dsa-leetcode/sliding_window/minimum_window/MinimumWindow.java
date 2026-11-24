@@ -57,4 +57,15 @@ public class MinimumWindow {
     }
     return bestLength == Integer.MAX_VALUE ? "" : text.substring(bestStart, bestStart + bestLength);
   }
+
+  public static void main(String[] args) {
+    String text = "ADOBECODEBANC";
+    String target = "ABC";
+    String answer = new MinimumWindow().solve(text, target);
+    if (!"BANC".equals(answer)) {
+      throw new AssertionError("expected BANC, got " + answer);
+    }
+    System.out.println(
+        "MinimumWindow: target=\"" + target + "\" in \"" + text + "\" -> \"" + answer + "\"");
+  }
 }

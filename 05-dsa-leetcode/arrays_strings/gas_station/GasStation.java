@@ -36,4 +36,20 @@ public class GasStation {
     }
     return start == gas.length ? 0 : start;
   }
+
+  public static void main(String[] args) {
+    int[] gas = {1, 2, 3, 4, 5};
+    int[] cost = {3, 4, 5, 1, 2};
+    int answer = new GasStation().solve(gas, cost);
+    if (answer != 3) {
+      throw new AssertionError("expected start 3, got " + answer);
+    }
+    System.out.println(
+        "GasStation: gas="
+            + java.util.Arrays.toString(gas)
+            + ", cost="
+            + java.util.Arrays.toString(cost)
+            + " -> "
+            + answer);
+  }
 }

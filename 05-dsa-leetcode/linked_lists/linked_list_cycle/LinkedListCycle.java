@@ -24,4 +24,15 @@ public class LinkedListCycle {
     }
     return false;
   }
+
+  public static void main(String[] args) {
+    ListNode second = new ListNode(2);
+    ListNode head = new ListNode(1, second);
+    second.next = new ListNode(3, second);
+    boolean answer = new LinkedListCycle().solve(head);
+    if (!answer) {
+      throw new AssertionError("expected a cycle");
+    }
+    System.out.println("LinkedListCycle: 1 -> 2 -> 3 -> 2 -> ... -> " + answer);
+  }
 }

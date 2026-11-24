@@ -31,4 +31,22 @@ public class TwoSum {
     }
     return new int[0];
   }
+
+  public static void main(String[] args) {
+    int[] nums = {2, 7, 11, 15};
+    int[] answer = new TwoSum().solve(nums, 9);
+    int[] expected = {0, 1};
+    if (!java.util.Arrays.equals(expected, answer)) {
+      throw new AssertionError(
+          "expected "
+              + java.util.Arrays.toString(expected)
+              + ", got "
+              + java.util.Arrays.toString(answer));
+    }
+    System.out.println(
+        "TwoSum: "
+            + java.util.Arrays.toString(nums)
+            + ", target=9 -> "
+            + java.util.Arrays.toString(answer));
+  }
 }

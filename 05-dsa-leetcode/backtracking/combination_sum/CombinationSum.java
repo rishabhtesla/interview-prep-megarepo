@@ -53,4 +53,15 @@ public class CombinationSum {
       path.remove(path.size() - 1);
     }
   }
+
+  public static void main(String[] args) {
+    int[] candidates = {2, 3, 6, 7};
+    java.util.List<java.util.List<Integer>> answer = new CombinationSum().solve(candidates, 7);
+    java.util.List<java.util.List<Integer>> expected =
+        java.util.List.of(java.util.List.of(2, 2, 3), java.util.List.of(7));
+    if (!expected.equals(answer)) {
+      throw new AssertionError("expected " + expected + ", got " + answer);
+    }
+    System.out.println("CombinationSum: target=7 -> " + answer);
+  }
 }

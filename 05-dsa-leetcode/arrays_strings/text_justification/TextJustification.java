@@ -64,4 +64,15 @@ public class TextJustification {
     }
     return result;
   }
+
+  public static void main(String[] args) {
+    String[] words = {"This", "is", "an", "example", "of", "text", "justification."};
+    java.util.List<String> answer = new TextJustification().solve(words, 16);
+    java.util.List<String> expected =
+        java.util.List.of("This    is    an", "example  of text", "justification.  ");
+    if (!expected.equals(answer)) {
+      throw new AssertionError("expected " + expected + ", got " + answer);
+    }
+    System.out.println("TextJustification: " + answer);
+  }
 }

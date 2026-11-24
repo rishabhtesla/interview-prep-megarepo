@@ -26,4 +26,14 @@ public class BinarySearch {
     }
     return low < nums.length && nums[low] == target ? low : -1;
   }
+
+  public static void main(String[] args) {
+    int[] nums = {-1, 0, 3, 5, 9, 12};
+    int answer = new BinarySearch().solve(nums, 9);
+    if (answer != 4) {
+      throw new AssertionError("expected index 4, got " + answer);
+    }
+    System.out.println(
+        "BinarySearch: target=9 in " + java.util.Arrays.toString(nums) + " -> " + answer);
+  }
 }

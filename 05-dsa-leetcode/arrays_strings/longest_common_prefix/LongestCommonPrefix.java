@@ -32,4 +32,14 @@ public class LongestCommonPrefix {
     }
     return strs[0].substring(0, limit);
   }
+
+  public static void main(String[] args) {
+    String[] words = {"flower", "flow", "flight"};
+    String answer = new LongestCommonPrefix().solve(words);
+    if (!"fl".equals(answer)) {
+      throw new AssertionError("expected fl, got " + answer);
+    }
+    System.out.println(
+        "LongestCommonPrefix: " + java.util.Arrays.toString(words) + " -> \"" + answer + "\"");
+  }
 }

@@ -24,4 +24,18 @@ public class ReverseList {
     }
     return previous;
   }
+
+  public static void main(String[] args) {
+    ListNode head = new ListNode(1, new ListNode(2, new ListNode(3)));
+    ListNode answer = new ReverseList().solve(head);
+    java.util.List<Integer> values = new java.util.ArrayList<>();
+    for (ListNode node = answer; node != null; node = node.next) {
+      values.add(node.value);
+    }
+    java.util.List<Integer> expected = java.util.List.of(3, 2, 1);
+    if (!expected.equals(values)) {
+      throw new AssertionError("expected " + expected + ", got " + values);
+    }
+    System.out.println("ReverseList: -> " + values);
+  }
 }

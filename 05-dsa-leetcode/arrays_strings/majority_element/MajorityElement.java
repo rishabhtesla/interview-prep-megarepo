@@ -24,4 +24,13 @@ public class MajorityElement {
     }
     return candidate;
   }
+
+  public static void main(String[] args) {
+    int[] nums = {2, 2, 1, 1, 1, 2, 2};
+    int answer = new MajorityElement().solve(nums);
+    if (answer != 2) {
+      throw new AssertionError("expected 2, got " + answer);
+    }
+    System.out.println("MajorityElement: " + java.util.Arrays.toString(nums) + " -> " + answer);
+  }
 }

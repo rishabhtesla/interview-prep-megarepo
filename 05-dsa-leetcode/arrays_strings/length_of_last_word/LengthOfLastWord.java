@@ -22,4 +22,13 @@ public class LengthOfLastWord {
     }
     return end - i;
   }
+
+  public static void main(String[] args) {
+    String text = "Hello World";
+    int answer = new LengthOfLastWord().solve(text);
+    if (answer != 5) {
+      throw new AssertionError("expected 5, got " + answer);
+    }
+    System.out.println("LengthOfLastWord: \"" + text + "\" -> " + answer);
+  }
 }

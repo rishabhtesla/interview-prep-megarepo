@@ -65,4 +65,13 @@ public class WordSearch {
     used[r][c] = false;
     return found;
   }
+
+  public static void main(String[] args) {
+    char[][] board = {{'A', 'B', 'C', 'E'}, {'S', 'F', 'C', 'S'}, {'A', 'D', 'E', 'E'}};
+    boolean answer = new WordSearch().solve(board, "ABCCED");
+    if (!answer) {
+      throw new AssertionError("expected ABCCED to be found");
+    }
+    System.out.println("WordSearch: ABCCED -> " + answer);
+  }
 }
