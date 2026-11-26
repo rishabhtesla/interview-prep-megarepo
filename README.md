@@ -14,6 +14,9 @@ way to expose gaps and practice. Completing a page is not the same as mastering 
 3. Read a topic, predict the example's behavior, run it, change an assumption, and explain the result aloud.
 4. Solve DSA problems before opening their solutions. Re-solve missed problems after 1, 3, 7, and 21 days.
 5. Use [INTERVIEW_PLAYBOOK.md](INTERVIEW_PLAYBOOK.md) for timed practice and scoring.
+6. Use the [topic-wise interview revision directory](13-interview-revision/README.md)
+   when you need questions, answers, flow diagrams, configuration, and runnable
+   code references in one place.
 
 Use [RESUME_COVERAGE.md](RESUME_COVERAGE.md) as the technology checklist. It
 separates topics that already have runnable lessons from resume technologies
@@ -61,6 +64,7 @@ directory specified in the relevant learning guide.
 | [SYSTEM_DESIGN.md](SYSTEM_DESIGN.md) | Capacity estimation and worked designs for checkout, analytics, URL shortening, and study progress |
 | [SQL_AND_DATA_MODELING.md](SQL_AND_DATA_MODELING.md) | Joins, windows, indexes, transactions, pagination, query exercises with worked answers |
 | [BEHAVIORAL_AND_PROJECT_STORIES.md](BEHAVIORAL_AND_PROJECT_STORIES.md) | Honest project narratives, ownership, conflict, incidents, and evidence-based communication |
+| [13-interview-revision](13-interview-revision/README.md) | Topic-wise questions, answers, flows, configuration maps, failure drills, and code references for the complete resume |
 
 ## Toolchain and version boundaries
 

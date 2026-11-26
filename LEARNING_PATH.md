@@ -119,6 +119,13 @@ submission. Document what is implemented and what remains a production concern.
 Use the diagnostic and exit criteria in `STUDY_PLAN.md`; do not measure progress
 by the number of pages read.
 
+## Interview revision directory
+
+After each track, open the matching guide in
+[`13-interview-revision`](13-interview-revision/README.md). Answer the prompt
+first, run the linked example, inspect its configuration, and complete the
+failure exercise before marking the topic ready.
+
 ## Interactive learning surfaces
 
 The repository is deliberately runnable at multiple levels:

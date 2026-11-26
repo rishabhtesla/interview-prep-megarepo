@@ -23,6 +23,7 @@ topic guide, a runnable example, and a test or observable check.
 | SQL, Redis TTL, Docker, Kubernetes, IaC, CI/CD | `10-storage-cloud-devops` | [`LEARNING_GUIDE.md`](10-storage-cloud-devops/LEARNING_GUIDE.md) |
 | Semantic search, reranking, agents, MCP, knowledge graphs | `11-genai-search-agents` | [`LEARNING_GUIDE.md`](11-genai-search-agents/LEARNING_GUIDE.md) |
 | Apache Camel, SOAP, Spring Cloud Eureka concepts | `12-enterprise-integration` | [`LEARNING_GUIDE.md`](12-enterprise-integration/LEARNING_GUIDE.md) |
+| Interview questions across the complete resume | `13-interview-revision` | [`README.md`](13-interview-revision/README.md) |
 
 ## Topics requiring dedicated reference modules
 
