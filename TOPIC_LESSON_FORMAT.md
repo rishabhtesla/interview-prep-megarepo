@@ -104,7 +104,7 @@ Definition
 
 If you cannot explain the trade-off or failure mode, repeat the lesson.
 
-## Required sections for each topic README
+## Required sections for each topic guide
 
 Each topic guide in this repository should answer these questions in order:
 
@@ -123,8 +123,8 @@ Each topic guide in this repository should answer these questions in order:
 13. **Interview questions:** what follow-ups are likely?
 14. **Revision card:** five-minute summary.
 
-Short code snippets belong in the README for fast revision. Complete examples
-belong in source files so they can be compiled and tested. The README must link
+Short code snippets belong in the guide for fast revision. Complete examples
+belong in source files so they can be compiled and tested. The guide must link
 to the exact source and test file; a code block without an execution path is
 not considered a complete example.
 

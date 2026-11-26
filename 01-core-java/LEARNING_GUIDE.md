@@ -21,6 +21,24 @@ javac --release 17 -Xlint:all -Werror -d out src/main/java/com/interviewprep/cor
 java -cp out com.interviewprep.core.CoreJavaDemo
 ```
 
+The aggregate runner should end with `All 11 Java lessons passed.` These are
+deterministic educational checks, not a JUnit suite, production load test, or
+proof of every possible thread schedule.
+
+## First pass
+
+Run [`ZeroToHero`](src/main/java/com/interviewprep/core/ZeroToHero.java) before
+the deeper lessons. Read one section, predict its checks, run it, change one
+line, and rerun:
+
+```bash
+java -cp out com.interviewprep.core.ZeroToHero
+```
+
+The tour covers values, control flow, arrays, strings, records, interfaces,
+collections, generics, exceptions, streams, `Optional`, executors, atomics,
+and a hash-map interview pattern.
+
 ## Lesson order
 
 | Step | Read and run | What the code does | Change exercise | Interview checkpoint |
@@ -51,6 +69,21 @@ For `ThreadsAndVisibility`, use this exact order:
 
 Do not memorize a slogan such as “volatile is thread-safe.” State the exact
 property it provides and the operation that remains non-atomic.
+
+## Optional observations and version boundary
+
+Run these only after the normal course works:
+
+```bash
+java -Xlog:class+load=info -cp out com.interviewprep.core.JvmAndValues
+java -Xlog:gc -cp out com.interviewprep.core.CoreJavaDemo
+javap -classpath out -c -p com.interviewprep.core.JvmAndValues
+```
+
+`--release 17` checks the Java 17 API surface. The course intentionally does not
+use virtual threads, record patterns, or preview syntax. Run with an actual
+Java 17 runtime when studying Java 17 GC/JIT behavior; a newer runtime only
+proves that the class files execute there.
 
 ## Revision card
 

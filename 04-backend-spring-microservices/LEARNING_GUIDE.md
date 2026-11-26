@@ -5,6 +5,38 @@ trying to run the browser, catalog-service, and progress-service together.
 Start with [MASTERCLASS.md](MASTERCLASS.md) and the isolated
 `zero-to-hero-service`; it has no database or network dependency.
 
+## Setup and first run
+
+Use JDK 17 and Maven 3.9+. From this directory:
+
+```bash
+export JAVA_HOME=/path/to/jdk-17
+export PATH="$JAVA_HOME/bin:$PATH"
+java -version
+mvn -version
+mvn clean verify
+```
+
+Run the beginner service before starting the distributed planner:
+
+```bash
+mvn -pl zero-to-hero-service spring-boot:run
+curl -fsS http://127.0.0.1:8083/actuator/health
+curl -i -X POST http://127.0.0.1:8083/api/orders \
+  -H 'Content-Type: application/json' \
+  -d '{"item":"Java course","quantity":2,"unitPriceCents":1500}'
+```
+
+Then follow the [API contracts](API.md) and
+[inter-service communication walkthrough](INTERSERVICE_COMMUNICATION.md) to
+start catalog-service and progress-service independently. The React client is
+in [track 06](../06-frontend-react-ui/LEARNING_GUIDE.md).
+
+This is an unauthenticated local learning system. Services bind to
+`127.0.0.1`; H2 files are local to each service's working directory; the
+beginner service stores orders in memory; and there is no shared database,
+broker, registry, gateway, circuit breaker, outbox, or saga.
+
 ## Lesson order
 
 | Step | Read first | Run/inspect | What you must explain |

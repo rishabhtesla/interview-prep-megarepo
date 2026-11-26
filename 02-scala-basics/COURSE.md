@@ -2,7 +2,7 @@
 
 Read the sources after each section and use the [practice lab](EXERCISES.md).
 All runnable examples use the pinned Scala 3 configuration in this track;
-commands are in [README](README.md).
+commands are in the [learning guide](LEARNING_GUIDE.md).
 
 ## 1. Values, functions and evaluation
 

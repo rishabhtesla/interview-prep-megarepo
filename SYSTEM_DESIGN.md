@@ -1,8 +1,8 @@
 # System design: reasoning from requirements
 
 These are worked design exercises, not claims about features implemented by the
-local application. The service and frontend READMEs document the actual runnable
-scope. Capacity numbers below are explicitly hypothetical.
+local application. The service and frontend learning guides document the actual
+runnable scope. Capacity numbers below are explicitly hypothetical.
 
 ## 1. A reusable design method
 

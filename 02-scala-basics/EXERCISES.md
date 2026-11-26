@@ -1,6 +1,6 @@
 # Scala practice lab with worked answers
 
-Use the [README commands](README.md) and compile the entire source directory
+Use the [learning-guide commands](LEARNING_GUIDE.md) and compile the entire source directory
 so the shared pinned configuration and checks are included. These exercises
 extend the supplied solved lessons; try your own implementation first.
 

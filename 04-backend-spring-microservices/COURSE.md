@@ -298,7 +298,7 @@ Explain why progress health may stay UP while saves return 503.
 | Unit | `ProgressServiceTest` | Orchestration/order; cannot prove HTTP or SQL |
 | HTTP + persistence integration | `CatalogIntegrationTest` | Routing, validation, JSON, H2, seed; not TCP |
 | Integration with local downstream HTTP | `ProgressIntegrationTest` | Real HTTP client failure paths + H2 writes |
-| End to end | README curl + React startup drill | Real processes/proxies and persistence path |
+| End to end | Learning-guide curl + React startup drill | Real processes/proxies and persistence path |
 
 Use deterministic test inputs, isolated DB profiles, and ephemeral downstream
 ports. Tests should assert observable semantics (status/body/database state),

@@ -1,6 +1,7 @@
 # Core Java: concepts, interview answers and tradeoffs
 
-Use this alongside the runnable files in the [lesson table](README.md).
+Use this alongside the runnable files in the
+[lesson table](LEARNING_GUIDE.md).
 An interview answer should state a contract, illustrate it, name a limitation,
 and explain when it affects an engineering choice.
 

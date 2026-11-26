@@ -17,17 +17,17 @@ topic guide, a runnable example, and a test or observable check.
 | Inter-service HTTP communication | `04-backend-spring-microservices` | [`INTERSERVICE_COMMUNICATION.md`](04-backend-spring-microservices/INTERSERVICE_COMMUNICATION.md) |
 | React, JavaScript, Vite, testing, async UI, GeoJSON mutation visualization | `06-frontend-react-ui` | [`LEARNING_GUIDE.md`](06-frontend-react-ui/LEARNING_GUIDE.md) |
 | DSA and LeetCode patterns | `05-dsa-leetcode` | [`LEARNING_GUIDE.md`](05-dsa-leetcode/LEARNING_GUIDE.md) |
-| Python 3.10/3.12, async code, FastAPI | `07-python-fastapi` | [`README.md`](07-python-fastapi/README.md) |
-| JavaScript ES6+, TypeScript, Express | `08-javascript-typescript-express` | [`README.md`](08-javascript-typescript-express/README.md) |
-| Message contracts, delivery semantics, retries, DLQs | `09-messaging-streaming` | [`README.md`](09-messaging-streaming/README.md) |
-| SQL, Redis TTL, Docker, Kubernetes, IaC, CI/CD | `10-storage-cloud-devops` | [`README.md`](10-storage-cloud-devops/README.md) |
-| Semantic search, reranking, agents, MCP, knowledge graphs | `11-genai-search-agents` | [`README.md`](11-genai-search-agents/README.md) |
-| Apache Camel, SOAP, Spring Cloud Eureka concepts | `12-enterprise-integration` | [`README.md`](12-enterprise-integration/README.md) |
+| Python 3.10/3.12, async code, FastAPI | `07-python-fastapi` | [`LEARNING_GUIDE.md`](07-python-fastapi/LEARNING_GUIDE.md) |
+| JavaScript ES6+, TypeScript, Express | `08-javascript-typescript-express` | [`LEARNING_GUIDE.md`](08-javascript-typescript-express/LEARNING_GUIDE.md) |
+| Message contracts, delivery semantics, retries, DLQs | `09-messaging-streaming` | [`LEARNING_GUIDE.md`](09-messaging-streaming/LEARNING_GUIDE.md) |
+| SQL, Redis TTL, Docker, Kubernetes, IaC, CI/CD | `10-storage-cloud-devops` | [`LEARNING_GUIDE.md`](10-storage-cloud-devops/LEARNING_GUIDE.md) |
+| Semantic search, reranking, agents, MCP, knowledge graphs | `11-genai-search-agents` | [`LEARNING_GUIDE.md`](11-genai-search-agents/LEARNING_GUIDE.md) |
+| Apache Camel, SOAP, Spring Cloud Eureka concepts | `12-enterprise-integration` | [`LEARNING_GUIDE.md`](12-enterprise-integration/LEARNING_GUIDE.md) |
 
 ## Topics requiring dedicated reference modules
 
 These are explicitly mentioned in the supplied resume and must not be hidden
-inside a generic project README:
+inside a generic project guide:
 
 | Area | Topics to cover |
 |---|---|
@@ -50,7 +50,7 @@ A row is complete only when its module contains:
 
 ```text
 beginner lesson -> intermediate lesson -> advanced lesson
-README with execution flow and code actions
+learning guide with execution flow and code actions
 small runnable example
 failure example
 automated test or deterministic check

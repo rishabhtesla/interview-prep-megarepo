@@ -125,7 +125,8 @@ mvn clean verify
 ```
 
 Then follow [INTERSERVICE_COMMUNICATION.md](INTERSERVICE_COMMUNICATION.md) and
-perform the stop-catalog failure drill from the main README.
+perform the stop-catalog failure drill from the main
+[learning guide](LEARNING_GUIDE.md).
 
 ## 5. Revision card
 

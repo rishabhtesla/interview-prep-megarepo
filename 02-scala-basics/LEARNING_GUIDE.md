@@ -14,9 +14,31 @@ scala-cli run src/main/scala --server=false \
   --main-class interviewprep.scalabasics.InterviewPrep
 ```
 
-The exact pinned version and individual commands are in [README.md](README.md).
-Run the source for one lesson, then read the matching section in
-[COURSE.md](COURSE.md).
+The shared [`project.scala`](src/main/scala/project.scala) pins Scala 3.3.6,
+requests JDK 17, and enables warnings as errors. Compile the complete source
+directory before running one lesson:
+
+```bash
+scala-cli compile src/main/scala --server=false
+scala-cli run src/main/scala --server=false \
+  --main-class interviewprep.scalabasics.ZeroToHero
+```
+
+Run the source for one lesson, then read the matching section in [COURSE.md](COURSE.md).
+The aggregate runner should end with `All 8 Scala lessons passed.` These are
+explicit self-checks, not a ScalaTest/MUnit suite.
+
+## First pass
+
+Start with [`ZeroToHero`](src/main/scala/ZeroToHero.scala). It demonstrates
+Scala 3 expressions, immutable collections, case classes, enums, pattern
+matching, `Option`, `Either`, for-comprehensions, type classes, Java
+interoperability, and owned `Future` execution:
+
+```bash
+scala-cli run src/main/scala --server=false \
+  --main-class interviewprep.scalabasics.ZeroToHero
+```
 
 ## Lesson order
 
@@ -47,6 +69,12 @@ pure value construction
 Scala syntax is not the main interview point. The important questions are
 immutability, evaluation timing, collection complexity, type modeling, and
 where side effects occur.
+
+## Version boundary
+
+This track uses Scala 3 syntax including indentation, enums, `given`/`using`,
+extensions, and wildcard imports. It is separate from the Scala 2.12 Spark
+build in the next track; do not mix their source syntax or binary artifacts.
 
 ## Java interoperability checkpoint
 

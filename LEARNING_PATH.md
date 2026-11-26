@@ -8,7 +8,7 @@ small feature you can defend.
 ## How to use every lesson
 
 1. **Predict:** write down what you think the example will print or render.
-2. **Run:** use the exact command in that track's README.
+2. **Run:** use the exact command in that track's learning guide.
 3. **Change:** alter one input, failure, or constraint.
 4. **Explain:** speak the invariant, ownership, failure mode, and complexity.
 5. **Test:** add or run a check that proves the behavior.
@@ -20,7 +20,7 @@ rebuild the smallest example without copying it.
 
 | Level | Goal | Start here | Evidence to complete |
 | --- | --- | --- | --- |
-| 0. Tools | Make the repository runnable | Root README and each track README | Java 17, Maven, Node 22, and the DSA runner work |
+| 0. Tools | Make the repository runnable | Root README and each track learning guide | Java 17, Maven, Node 22, and the DSA runner work |
 | 1. Programming | Build reliable language fundamentals | [`01-core-java/MASTERCLASS.md`](01-core-java/MASTERCLASS.md) | Explain values, references, collections, exceptions, and tests |
 | 2. Problem solving | Recognize DSA patterns | `05-dsa-leetcode` | Solve one problem per pattern and state an invariant |
 | 3. Data | Query and transform data | [`03-spark-distributed-computing/MASTERCLASS.md`](03-spark-distributed-computing/MASTERCLASS.md), `SQL_AND_DATA_MODELING.md` | Explain joins, indexes, windows, shuffles, and skew |
@@ -74,7 +74,8 @@ rebuild the smallest example without copying it.
 - Read `App.jsx`, `TopicCard.jsx`, and `useStudy.js` in that order.
 - Build a small form from scratch.
 - Practice loading, empty, error, retry, stale-request, and accessibility cases.
-- Read the React track README from section 1 through section 25.
+- Read the React track [course](06-frontend-react-ui/COURSE.md) from section 1
+  through section 25.
 
 ### Weeks 13–14: Full-stack feature
 

@@ -31,10 +31,10 @@ public final class CourseTests {
             check(source.contains("public class " + name), "public solution: " + name);
         }
         eq(sourceNames, covered);
-        String readme = Files.readString(Path.of("README.md"));
+        String guide = Files.readString(Path.of("LEARNING_GUIDE.md"));
         for (String path : Files.readAllLines(Path.of(args[0]))) {
             String relative = path.startsWith("./") ? path.substring(2) : path;
-            check(readme.contains("](" + relative + ")"), "catalog link: " + relative);
+            check(guide.contains("](" + relative + ")"), "catalog link: " + relative);
         }
         System.out.println("PASS: exactly " + covered.size() + " solutions; "
                 + assertions + " explicit assertions, including seeded oracle checks.");

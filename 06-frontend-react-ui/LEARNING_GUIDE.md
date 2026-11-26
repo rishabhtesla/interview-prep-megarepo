@@ -1,8 +1,9 @@
 # React and TypeScript learning guide
 
-Use the dashboard as a visual starting point, then read the source in execution
-order. The goal is to explain what renders, who owns state, what an effect
-synchronizes, and what the user sees when the network fails.
+Use the dashboard as a visual starting point, then read the detailed
+[React course](COURSE.md) in execution order. The goal is to explain what
+renders, who owns state, what an effect synchronizes, and what the user sees
+when the network fails.
 
 ## Setup
 
@@ -17,15 +18,15 @@ npm test
 
 | Step | Read/inspect | User action | What to explain |
 |---:|---|---|---|
-| 1 | JSX and component sections in `README.md` | Render the dashboard | Component tree, JSX expressions, composition |
+| 1 | JSX and component sections in `COURSE.md` | Render the dashboard | Component tree, JSX expressions, composition |
 | 2 | `App.jsx` | Filter by track and search | Controlled inputs, derived values, conditional rendering |
 | 3 | `TopicCard.jsx` | Edit a note without saving | Local draft state versus confirmed server state |
 | 4 | `useStudy.js` and `api.js` | Reload and save progress | Custom hook, async state, API boundary, error propagation |
 | 5 | `AlgorithmLab.jsx` | Change target and click Next step | State snapshot, derived steps, visual invariant |
-| 6 | React README effects section | Stop a backend service | Loading/error/retry states and abort cleanup |
-| 7 | React README forms/accessibility sections | Use keyboard only | Labels, focus, semantic controls, status announcements |
+| 6 | React course effects section | Stop a backend service | Loading/error/retry states and abort cleanup |
+| 7 | React course forms/accessibility sections | Use keyboard only | Labels, focus, semantic controls, status announcements |
 | 8 | `App.test.jsx` and `api.test.js` | Run the tests | User behavior, mocked HTTP, failure-path assertions |
-| 9 | React README performance/TypeScript sections | Inspect a rerender | Referential equality, memoization trade-offs, types |
+| 9 | React course performance/TypeScript sections | Inspect a rerender | Referential equality, memoization trade-offs, types |
 
 ## The browser request trace
 

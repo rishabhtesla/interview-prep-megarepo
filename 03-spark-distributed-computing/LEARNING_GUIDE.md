@@ -5,7 +5,7 @@ run the Scala version and separate Spark behavior from language syntax.
 
 ## Study setup
 
-Follow the pinned setup in [README.md](README.md), then run:
+Follow the pinned setup and version matrix in [COURSE.md](COURSE.md), then run:
 
 ```bash
 .venv/bin/python -m unittest discover -s pyspark/tests -v

@@ -1,6 +1,6 @@
 # Java practice lab and worked solutions
 
-Run commands are in [README](README.md). Work on each exercise before opening its
+Run commands are in the [learning guide](LEARNING_GUIDE.md). Work on each exercise before opening its
 solution. The supplied lessons are solved reference implementations; make your
 practice edits locally and rerun the named class plus the aggregate runner.
 

@@ -14,7 +14,7 @@ understand -> run -> inspect -> change -> test -> explain
 ## 0. Version boundary and setup
 
 The reproducible matrix is Spark/PySpark 3.5.6, Scala 2.12.18, JDK 17, and
-CPython 3.10. Follow the complete setup in [README.md](README.md), then run the
+CPython 3.10. Follow the complete setup in [COURSE.md](COURSE.md), then run the
 Python tour:
 
 ```bash

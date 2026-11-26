@@ -5,7 +5,8 @@ Attempt the requirement and state an invariant before reading the solution.
 
 ## Working environment
 
-Use the README's Java/Python environment and start from the track directory.
+Use the track [course's](../COURSE.md) Java/Python environment and start from
+the track directory.
 For interactive PySpark:
 
 ```bash
@@ -26,7 +27,7 @@ orders.createOrReplaceTempView("orders")
 customers.createOrReplaceTempView("customers")
 ```
 
-The SQL solutions also run in Scala using the jar built in the README:
+The SQL solutions also run in Scala using the jar built in the course guide:
 
 ```bash
 .venv/bin/spark-shell --master 'local[2]' \
